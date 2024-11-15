@@ -5,7 +5,8 @@
 
 #### 訓練重點
   - HTML及CSS切版
-  - Bootstrap框架
+  - Fancyapps燈箱插件
+  - GoogleFont字型及Boxicon
 
 ## Demo
 ![demo1](demo1.gif)
