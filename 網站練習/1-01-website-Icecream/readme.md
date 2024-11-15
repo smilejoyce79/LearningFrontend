@@ -13,6 +13,7 @@
  - Photoshop後製修圖去背
 
 ## Demo預覽
+[Demo](https://balmuda-demo-884.pages.dev/)
 ![Demo 預覽](demo.gif)
 
 ## 建議的開啟方式
