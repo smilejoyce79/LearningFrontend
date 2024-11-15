@@ -9,6 +9,6 @@
   - GoogleFont字型及Boxicon
 
 ## Demo
-[demo](https://1-02-personal-laura.pages.dev/)
+[demo](https://1-02-personal-laura.pages.dev/) <br/>
 ![demo1](demo1.gif)
 ![demo2](demo2.gif)
