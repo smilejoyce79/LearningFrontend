@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Fade In/Out</title>
+</head>
+<body>
+
+<audio id="myAudio" src="./05 - Flex Panel Gallery//5pr/jaymedia.mp4"></audio>
+<button onclick="fadeIn()">播放並淡入</button>
+<button onclick="fadeOut()">淡出並停止</button>
+
+<script>
+  let audioContext;
+  let gainNode;
+
+  // 等待用戶互動後才初始化 AudioContext（瀏覽器要求用戶操作後才能初始化音頻上下文）
+  function initAudioContext() {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const audioElement = document.getElementById('myAudio');
+      const audioSource = audioContext.createMediaElementSource(audioElement);
+
+      // 創建增益節點（控制音量）
+      gainNode = audioContext.createGain();
+      audioSource.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+
+      // 初始化音量為 0
+      gainNode.gain.value = 0;
+    }
+
+    // 確保 AudioContext 已啟動
+    if (audioContext.state === 'suspended') {
+      audioContext.resume();
+    }
+  }
+
+  // 定義淡入效果
+  function fadeIn() {
+    initAudioContext(); // 確保 AudioContext 已初始化
+    const audioElement = document.getElementById('myAudio');
+    audioElement.play();
+
+    // 漸變音量從 0 到 1
+    gainNode.gain.setTargetAtTime(1, audioContext.currentTime, 2);
+  }
+
+  // 定義淡出效果
+  function fadeOut() {
+    initAudioContext(); // 確保 AudioContext 已初始化
+    const audioElement = document.getElementById('myAudio');
+
+    // 漸變音量從 1 到 0
+    gainNode.gain.setTargetAtTime(0, audioContext.currentTime, 2);
+
+    // 2 秒後暫停音頻
+    setTimeout(() => audioElement.pause(), 2000);
+  }
+
+    window.addEventListener('click',fadeIn)
+</script>
+
+</body>
+</html>

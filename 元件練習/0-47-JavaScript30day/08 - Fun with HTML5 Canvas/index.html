@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+  <canvas id="draw" width="800" height="800"></canvas>
+  <script>
+    const canvas = document.querySelector('#draw');
+    const ctx = canvas.getContext('2d')  //.getContext: 在HTML tag <canvas>取得2d繪圖環境
+
+    canvas.width = window.innerWidth;   //將元素原寬度用 瀏覽器原寬度 改寫
+    canvas.height = window.innerHeight;  //將元素原高度用 瀏覽器高度 改寫
+
+    ctx.strokeStyle = '#BADA55'; //設置描邊的顏色或樣式
+    ctx.lineJoin = 'round';  //設置線條交叉點的樣式，如 round、bevel 或 miter。
+    ctx.lineCap = 'round';  //設置線條末端的樣式，可為 butt（平滑結束）、round（圓形）、square（方形）。
+    ctx.lineWidth = 10; //筆刷寬度
+    ctx.globalCompositeOperation = 'multiply'; // 設置混色模式/darken/lighten...等效果
+
+
+    let isDrawing = false; //預設筆刷狀態
+    let lastX = 0; //預設x軸位置
+    let lastY = 0; //預設y軸位置
+    let hue = 0 ; //預設色彩    // https://mothereffinghsl.com/
+    let direction = true; //預設開啟筆刷'粗細'方向變換功能
+
+    function draw(e){
+      if(!isDrawing) return; //若筆刷狀態未啟動(false),直接回傳,停止往下運行此函數
+      console.log(e)
+      
+      ctx.strokeStyle = `hsl(${hue}, 100%, 50%)` //開始路徑前,將hue變數帶入色彩值, 對比鮮豔度100%, 亮度50%
+      // ctx.lineWidth = hue;
+      ctx.beginPath(); //開始一條新路徑，清除當前路徑列表
+      ctx.moveTo(lastX, lastY);   //start from
+      ctx.lineTo(e.offsetX, e.offsetY);   //go to
+      ctx.stroke();   //畫出路徑的邊框
+
+      // lastX = e.offsetX
+      // lastY = e.offsetY
+      [lastX,lastY] = [e.offsetX,e.offsetY]
+
+      hue++; //不斷增加hue的色彩值,以達到'變色'效果
+      // if(hue >= 360){
+      //   hue = 0;
+      // }
+
+      if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {  //使筆刷寬度介於在1~100之間以遞增/遞減的方向變化
+        direction = !direction;
+      }
+      if(direction) {
+        ctx.lineWidth++;
+      } else {
+        ctx.lineWidth--;
+      }
+    }
+
+    canvas.addEventListener('mousemove',draw);
+    canvas.addEventListener('mousedown',(e)=> {
+      isDrawing = true;//游標按下時啟動畫筆
+      [lastX,lastY] = [e.offsetX,e.offsetY] //並改變路徑起始點座標位置
+    }); 
+    canvas.addEventListener('mouseup',()=> isDrawing = false); //游標放開時關閉畫筆
+    canvas.addEventListener('mouseout',()=> isDrawing = false); //游標未放開,但以超出畫布範圍時也關閉畫筆
+
+
+
+  </script>
+
+  <style>
+    html, body {
+      margin: 0;
+    }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+## 🗒️ Repository Contents:
+  - LearningFrontend
+    - 元件練習
+      - 卡片盒Cardbox
+      - 商品卡productCard
+      - TodoList app
+      - slideToggle列表
+      - fullpage slider
+      - CSS動畫: Wave & IG
+      - 捲軸滾動有進場動畫的圖文切版
+      - 有轉場動畫的輪播
+      - JavaScript30天挑戰題
+    - 網站練習
+      - 餐廳訂位系統
+      - 蝦皮商城網站
+      - Rimoo咖啡官網
+      - 臨摹Balmuda網站切版並佈署
+      - 臨摹冰店切版及動畫插件
+      - 臨摹個人網頁Laura
+      - 臨摹個人網頁simple
+      - 個人網站封面切版及游標動畫
+    - 示範資料庫
+      - 切版:flex排版及對齊定位方法
+      - Bulma示範
+      - Bootstrap示範
+      - React AntDesign示範

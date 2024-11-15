@@ -1,0 +1,94 @@
+*{
+	box-sizing: border-box;
+	position: relative;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+h1,p{
+	margin: 0;
+}
+
+.product{
+	width: 300px;
+	box-shadow: 0px 10px 20px rgba(0,0,0,0.8) ;
+	display: block;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 4px;
+}
+
+/* image */
+.product .img-box{
+	/* width: 300px; */
+	/* 若不設定寬度 或 設定為__%, 會隨著父層設定的寬度變化 */
+	height: 225px;
+	overflow: hidden;
+	display: block;
+}
+
+.product .image{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: all 0.5s;
+}
+
+.product:hover .image{
+	transform: scale(1.5);
+}
+
+/* info */
+.info{	
+	padding: 16px;
+	display: block;
+	margin-bottom: 10px;
+}
+.name{
+	font-size: 13px;
+	font-family:'微軟正黑體';
+	font-weight: 800;
+	margin-bottom: 10px;
+}
+.para{
+	margin-bottom: 10px;
+	font-size: 13px;
+	text-align: justify;
+}
+.price:before{
+	content: '';
+}
+.price{
+	font-size: 13px;
+	font-family:'微軟正黑體';
+	font-weight: 800;  
+	color: #d36161;
+	display: block;
+	position: absolute;
+	right: 10px; 
+	height: 40px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+.tag{
+	background-color: #e17c7c;
+	color: #fff;
+	font-size: 13px;
+	font-family: '微軟正黑體';
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 18px;
+	border-radius: 4px;
+	padding: 2px 4px;
+	margin: 8px;
+}

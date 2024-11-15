@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css animation slider</title>
+    <link rel="stylesheet" href="/vendor/normalize/normalize.css">
+    <link rel="stylesheet" href="/vendor/bootstrap-grid/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/vendor/OwlCarousel2-2.3.4/assets/owl.carousel.min.css">
+    <!-- <link rel="stylesheet" href="/vendor/OwlCarousel2-2.3.4/assets/owl.theme.default.min.css"> -->
+    <link rel="stylesheet" href="/vendor/animate/animate.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <section class="main">
+            <div class="jumbotron">
+
+                <div class="slider-transition"> <!--註3-->
+                    <div class="panel panel-1"></div>
+                    <div class="panel panel-2"></div>
+                </div>
+
+                <div class="owl-carousel owl-theme">
+                    <div class="slider-item">
+                        <div class="slider-item__image" style="background-image: url('./images/slider/light-1.jpg');"></div>
+
+                        <!-- 圖層順序:為避免content的內容按鈕等被drops蓋住，故意將.drops加在.content前面 (後面寫的會蓋掉/取代掉前面寫的)) -->
+                        <div class="drops">
+                            <img class="drops-item-1" src="./images/drops/maple-l.png" alt="" >
+                            <img class="drops-item-2" src="./images/drops/maple-r.png" alt="" >
+                            <img class="drops-item-3" src="./images/drops/maple-l.png" alt="" >
+                            <img class="drops-item-4" src="./images/drops/maple-r.png" alt="" >
+                            <img class="drops-item-5" src="./images/drops/maple-l.png" alt="" >
+                        </div>
+
+                        <div class="slider-item__content">
+                            <!-- .container是寫在bootstrap grid的樣式 -->
+                            <div class="container">
+                                <!-- 註2: way2 限制文字區塊寬度在'12分之6'以內-->
+                                 <div class="col-lg-6">
+                                     <h2 class="slider-item__title">
+                                         You know<br>What I'm saying
+                                     </h2>
+                                     <p class="slider-item__para">
+                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, excepturi earum. Nisi nesciunt consequatur architecto veniam totam rerum adipisci voluptatum doloribus facere sit? Voluptatibus, atque.
+                                     </p>
+                                     <a href="#!" class="btn slider-item__btn">GIVE IT A TRY</a>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__image" style="background-image: url('./images/slider/light-2.jpg');"></div>
+                        <div class="drops">
+                            <img class="drops-item-1" src="./images/drops/orange-l.png" alt="" >
+                            <img class="drops-item-2" src="./images/drops/orange-r.png" alt="" >
+                            <img class="drops-item-3" src="./images/drops/orange-l.png" alt="" >
+                            <img class="drops-item-4" src="./images/drops/orange-r.png" alt="" >
+                            <img class="drops-item-5" src="./images/drops/orange-l.png" alt="" >
+                        </div>
+                        <div class="slider-item__content">
+                            <div class="container">
+                                 <div class="col-lg-6">
+                                     <h2 class="slider-item__title">
+                                         You know<br>What I'm saying
+                                     </h2>
+                                     <p class="slider-item__para">
+                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, excepturi earum. Nisi nesciunt consequatur architecto veniam totam rerum adipisci voluptatum doloribus facere sit? Voluptatibus, atque.
+                                     </p>
+                                     <a href="#!" class="btn slider-item__btn">GIVE IT A TRY</a>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="slider-item__image" style="background-image: url('./images/slider/light-3.jpg');"></div>
+                        <div class="drops">
+                            <img class="drops-item-1" src="./images/drops/apricot-leaf.png" alt="" >
+                            <img class="drops-item-2" src="./images/drops/apricot-leaf.png" alt="" >
+                            <img class="drops-item-3" src="./images/drops/apricot-leaf.png" alt="" >
+                            <img class="drops-item-4" src="./images/drops/apricot-leaf.png" alt="" >
+                            <img class="drops-item-5" src="./images/drops/apricot-leaf.png" alt="" >
+                        </div>
+                        <div class="slider-item__content">
+                            <div class="container">
+                                 <div class="col-lg-6">
+                                     <h2 class="slider-item__title">
+                                         You know<br>What I'm saying
+                                     </h2>
+                                     <p class="slider-item__para">
+                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, excepturi earum. Nisi nesciunt consequatur architecto veniam totam rerum adipisci voluptatum doloribus facere sit? Voluptatibus, atque.
+                                     </p>
+                                     <a href="#!" class="btn slider-item__btn">GIVE IT A TRY</a>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+<script src="/vendor/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="/vendor/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    // .owl-carousel 可改為自定義名稱
+    $('.owl-carousel').owlCarousel({
+        items:1,
+        loop:true,
+        nav:true,
+        navText:[], //亦可在此引入font-awsome icon
+        mouseDrag:false,
+    })
+
+    // owl.carousel.js 的Event方法 //註3
+    $('.owl-carousel').on('changed.owl.carousel', function(event) {  //當.owl-carousel有任何異動(change)就執行下列
+        $('.slider-transition').addClass('animated');
+        setTimeout(function(){   //等待0.8秒後,執行下列
+            $('.slider-transition').removeClass('animated');
+        },800)
+    })
+});
+</script>
+</html>

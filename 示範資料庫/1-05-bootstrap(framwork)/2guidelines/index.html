@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    -->
+    <!-- 註2:bootstrap客製化 自訂sass -->
+    <link rel="stylesheet" href="./css/my.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    <!-- 註1: Tootips -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>1-05 pr bootstrap 2</title>
+</head>
+<body>
+    <!--! navbar導覽列 -->
+    <nav class="navbar navbar-expand-md nav-light">
+        <!-- navbar-expand-md 超過md尺寸顯示,否則隱藏 -->
+        <div class="container-lg">
+            <!-- container-lg 超過lg尺寸的置中容器(小於lg尺寸則取消置中,變成貼邊) -->
+            <!-- container-fluid 全幅容器,width:100% -->
+             <!-- ! Logo -->
+            <a href="#intro" class="navbar-brand">
+                <span class="fw-bold text-secondary">
+                    <!-- fw-bold 粗體字 text-secondary 淺色字-->
+                    Ney Ninja Pro - the Book
+                </span>
+            </a>
+            <!-- ! toggle button for mobile nav -->
+             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                 <!-- data-bs-target="#id" 監聽點擊事件,對指定id執行展開/隱藏 , aria-_ 只是在向瀏覽器說明用途 -->
+                <span class="navbar-toggler-icon">
+                    <!-- navbar-toggler-icon 漢堡選單icon -->
+                </span>
+             </button>
+
+            <!-- ! 導覽列明細 -->
+            <div id="main-nav" class="justify-content-end align-center collapse navbar-collapse">
+                <!-- id="main-nav" 串接 data-bs-target="#id" 的關係-->
+                <!-- collapse 調用 data-bs-toggle="collapse" , navbar-collapse 導覽列摺疊 -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#topics" class="nav-link">About The Book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#reviews" class="nav-link">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <!-- d-md-none md以上設備不顯示 -->
+                        <a href="#pricing" class="nav-link">Princing</a>
+                    </li>
+                    <li class="nav-item d-none d-md-inline ms-2">
+                        <!-- d-none d-md-inline display不顯示，但md以上設備以inline顯示 -->
+                        <a href="#pricing" class="btn btn-secondary">Buy Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <p>網格 col </p>
+    <div class="container-lg my-5">
+        <div class="row">
+            <div class="col">
+                <div class="bg-success bg-opacity-25 p-5">box1</div>
+            </div>
+            <div class="col">
+                <div class="bg-success bg-opacity-25 p-5">box2</div>
+            </div>
+            <div class="col">
+                <div class="bg-success bg-opacity-25 p-5">box3</div>
+            </div>
+            <div class="col">
+                <div class="bg-success bg-opacity-25 p-5">box4</div>
+            </div>
+        </div>
+    </div>
+
+    <p>網格 col-_ </p>
+    <div class="container-lg my-5">
+        <div class="row">
+            <div class="col-6">
+                <div class="bg-success bg-opacity-25 p-5">box1</div>
+            </div>
+            <div class="col-3">
+                <div class="bg-success bg-opacity-25 p-5">box2</div>
+            </div>
+            <div class="col-3">
+                <div class="bg-success bg-opacity-25 p-5">box3</div>
+            </div>
+        </div>
+    </div>
+    
+    <p>網格 col-sm-_ col-lg-_ 個別設定'不同尺寸時'的欄寬占比 </p>
+    <div class="container-lg my-5">
+        <div class="row">
+            <div class="col-sm-4 col-lg-6">
+                <div class="bg-success bg-opacity-25 p-5">box1</div>
+            </div>
+            <div class="col-sm-4 col-lg-3">
+                <div class="bg-success bg-opacity-25 p-5">box2</div>
+            </div>
+            <div class="col-sm-4 col-lg-3">
+                <div class="bg-success bg-opacity-25 p-5">box3</div>
+            </div>
+        </div>
+    </div>
+
+    <p>網格 col-md-_ 和 justify-content-_ 避免搬家跑版 </p>
+    <div class="container-lg my-5">
+        <div class="row  justify-content-center">
+            <!-- justify-content-start , justify-content-end , justify-content-between -->
+            <div class="col-md-3">
+                <div class="bg-success bg-opacity-25 p-5">box1</div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-success bg-opacity-25 p-5">box2</div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-success bg-opacity-25 p-5">box3</div>
+            </div>
+        </div>
+    </div>
+
+    <p>圖文</p>
+    <section id="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center">
+                <!-- !文字 -->
+                <div class="col-md-5 text-center text-md-start align-items-center">
+                    <!-- text-center 置中, text-md-start 但超過md尺寸靠頭對齊, -->
+                    <!-- align-items-center 子元件垂直置中對齊 -->
+                    <h1>
+                        <!-- 用h1排版標題, 用display-_ 設定字級樣式 -->
+                        <div class="display-2">Black-Belt</div>
+                        <div class="display-5 text-muted">Your Coding Skills</div>
+                        <!-- text-muted 細字體 -->
+                    </h1>
+                    <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                    <a href="#pricing" class="btn btn-primary btn-lg">Buy Now</a>
+                </div>
+                <!-- !圖片 -->
+                <div class="col-md-5 text-center my-5 d-none d-md-block">
+                    <!-- d-none 不顯示(display:none) , d-md-block 但超過md尺寸以block顯示 -->
+                    <span title="Net Ninja Book Cover Tooltip" data-bs-toggle="tooltip" data-bs-placement="left">
+                        <!-- <span title="..."> 游標懸停出現提示框, data-bs-toggle="tooltip" 指定套用tooltips的設定data-bs-placement="left" 指定提示框顯示的位置 
+                        註1: Tootips--->
+                        <img class="img-fluid" src="./image/sea.jpg" alt="">
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <p>card</p>
+    <section id="pricing" class="bg-altlight p-5">
+        <!-- bg-altlight 使用sass客製定義的顏色變數  -->
+        <div class="container-lg">
+            <div class="text-center">
+                <h2>Pricing Plans</h2>
+                <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+            </div>
+            <div class="row align-items-center justify-content-center g-5">
+                <!-- g-_ 設定card之間寬度 (col間距) -->
+                <!-- !card1 -->
+                <div class="col-8 col-lg-4 col-xl-3">
+                    <div class="card border-0">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Starter Edition</h4>
+                            <p class="lead card-subtitle">eBook downlond only</p>
+                            <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, aut.</p>
+                            <a href="#!" class="btn btn-outline-primary btn-lg mt-3">Buy now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- !card2 -->
+                <div class="col-9 col-lg-4">
+                    <div class="card border-primary border-2">
+                        <div class="card-header text-center text-primary">Most Popular</div>
+                        <div class="card-body text-center py-5">
+                            <h4 class="card-title">Complete Edition</h4>
+                            <p class="lead card-subtitle">eBook downlond & all updates</p>
+                            <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, aut.</p>
+                            <a href="#!" class="btn btn-outline-primary btn-lg mt-3">Buy now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- !card3 -->
+                <div class="col-8 col-lg-4 col-xl-3">
+                    <div class="card border-0">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Ultimate Edition</h4>
+                            <p class="lead card-subtitle">download, updates & extras</p>
+                            <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, aut.</p>
+                            <a href="#!" class="btn btn-outline-primary btn-lg mt-3">Buy now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </section>
+
+    <section id="topics">
+        <div class="container-lg p-5">
+            <div class="text-center">
+                <h2>Inside the Book ...</h2>
+                <p class="lead text-muted">A quick glance at the topics you'll learn</p>
+            </div>
+
+            <div class="row my-5 justify-content-around align-items-center g-5">
+
+                <div class="col-6 col-lg-6 col-sm-12">
+                    <img class="img-fluid" src="./image/sea.jpg" alt="">
+                </div>
+
+                <div class="col-6 col-lg-6 col-sm-12">
+                    <div id="chapters" class="accordion">
+                        <div class="accordion-item">
+                            <h2 id="heading-2" class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-1" aria-expanded="true" aria-controls="chapter-1">
+                                    <!-- data-bs-target="#id" 綁定id連動 -->
+                                    Chapter-1 - your First Web Page
+                                </button>
+                            </h2>
+                            <div id="chapter-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#chapters">
+                                <!-- show 預設手風琴內容展開 -->
+                                <div class="accordion-body">
+                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi illum eaque aliquam suscipit, veritatis quis voluptas quidem quod harum sequi?
+                                  </p>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum cum ad enim commodi blanditiis voluptas dolores quas, earum necessitatibus? Autem?</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 id="heading-2" class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-2" aria-expanded="true" aria-controls="chapter-2">
+                                    <!-- data-bs-target="#id" 綁定id連動 -->
+                                    Chapter-2 - your First Web Page
+                                </button>
+                            </h2>
+                            <div id="chapter-2" class="accordion-collapse collapse show" aria-labelledby="heading-2" data-bs-parent="#chapters">
+                                <!-- show 預設手風琴內容展開 -->
+                                <div class="accordion-body">
+                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi illum eaque aliquam suscipit, veritatis quis voluptas quidem quod harum sequi?
+                                  </p>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum cum ad enim commodi blanditiis voluptas dolores quas, earum necessitatibus? Autem?</p>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="bg-light p-5">
+        <div class="container-lg">
+            <div class="text-center">
+                <h2><i class="bi bi-stars text-altdark"></i>book reviews</h2>
+                <!-- text-altdark 使用sass客製定義的顏色變數 -->
+                <p class="lead">What my students have said about the book ...</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div class="list-group-item py-3">
+                            <div class="pb-2 text-altdark">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <h5 class="mb-1">A must buy for every aspiring web dev</h5>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ullam voluptas incidunt quod repellendus quasi facere </p>
+                            <small>Review by Mario</small>
+                        </div>
+                        <div class="list-group-item py-3">
+                            <div class="pb-2 text-altdark">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <h5 class="mb-1">A must buy for every aspiring web dev</h5>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ullam voluptas incidunt quod repellendus quasi facere </p>
+                            <small>Review by Mario</small>
+                        </div>
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <h5 class="mb-1">A must buy for every aspiring web dev</h5>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ullam voluptas incidunt quod repellendus quasi facere </p>
+                            <small>Review by Mario</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="p-5">
+        <div class="container-lg">
+
+            <div class="text-center">
+                <h2>Get in Touch</h2>
+                <p class="lead">Questions to ask? Fill out the form to contact me directly...</p>
+            </div>
+
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-6">
+                    <form action="">
+                        <label for="email" class="form-label">Email address:</label>
+                        <div class="input-group mb-4">
+                            <!-- <label> , input-group , input-group-text , <input> 的結構可以創建input前具有icon的效果 -->
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope-fill"></i>
+                            </span>
+                            <input id="email" type="email" class="form-control" placeholder="e.g.mario@example.com">
+                            <span class="input-group-text">
+                                <span title="Enter an email address we cen reply to.">
+                                    <i class="bi bi-question-circle"></i>
+                                </span>
+                            </span>
+                        </div>
+
+                        <label for="name" class="form-label">Name:</label>
+                        <input id="name" type="text" class="form-control" placeholder="e.g.Mario">
+
+                        <label for="subject" class="form-label">What is your question about?</label>
+                        <select id="subject" class="form-select">
+                            <option value="pricing" selected>Pricing query</option>
+                            <option value="content">Content query</option>
+                            <option value="other">Other query</option>
+                        </select>
+
+                        <div class="form-floating mb-4 mt-5">
+                            <!-- form-floating 可把'欄位名稱'放在欄位內顯示(長得很像恆現的placeholder) -->
+                            <textarea id="query" class="form-control" style="height:140px"></textarea>
+                            <label for="query" class="form-label">Your query...</label>
+                        </div>
+
+                        <div class="mb-4 text-center">
+                            <button class="btn btn-secondary" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- ! modle 彈出視窗 -->
+        <section id="modal">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                Open modal
+            </button>
+    
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Modal Heading</h4>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      Modal body..
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <!-- <div class="modal-footer"> -->
+                      <!-- <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> -->
+                    <!-- </div> -->
+              
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offcanvas" class="mt-5">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                Open Offcanvas Sidebar
+            </button>
+
+            <div class="offcanvas offcanvas-end" id="demo">
+                <!--.offcanvas-start|end|top|bottom 展開方向: end右 start左 top上 bottom下 -->
+                <div class="offcanvas-header">
+                  <h1 class="offcanvas-title">Heading</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <p>Some text lorem ipsum.</p>
+                  <p>Some text lorem ipsum.</p>
+                  <p>Some text lorem ipsum.</p>
+                </div>
+              </div>
+        </section>
+
+        <section id="dropdown" class="mx-auto my-5" style="width: 200px">
+            <div class="dropdown">
+                <!-- dropdowm/dropup/dropstart/dropend 展開方向 -->
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  Dropdown button Dropdown button Dropdown button
+                </button>
+                <ul class="dropdown-menu dropdown-menu-start">
+                    <!-- dropdown-menu-start 展開選單的位置 -->
+                    <li><h5 class="dropdown-header">Dropdown header 1</h5></li>
+                    <li><a class="dropdown-item" href="#">Normal</a></li>
+                    <li><a class="dropdown-item active" href="#">Active</a></li>
+                    <li><hr class="dropdown-divider"></hr></li>
+                    <li><a class="dropdown-item disabled" href="#">Disabled</a></li>
+                    <li><span class="dropdown-item-text">Just Text</span></li>
+                </ul>
+              </div>
+        </section>
+        <div style="margin-top: 500px;"></div>
+
+        <!-- 註2:bootstrap客製化 自訂sass
+        treminal:
+         npm init
+         enter.....y enter
+         產出一個package.json檔案
+         npm install bootstrap
+         在node_modules的bootstrap中建立自定義的scss檔
+          -->
+    <script>
+        //  註1: Tootips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+</body>
+</html>

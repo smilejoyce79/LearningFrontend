@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <!-- 加上 data-bs-theme="dark" 加上的區塊會變深色主題 -->
+<head>
+  <title>bootstrap-guidelines 2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    span {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      margin: 6px;
+      background-color: #e3f5d4;
+    }
+    </style>
+</head>
+<body>
+
+    <div data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+        <!-- 或直接加在<body>上 -->
+
+        <!-- data-bs-offset="50" 指定捲軸滾到多少數值時,跳下一個區塊 -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+          <div class="container-fluid">
+              <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="#section1">Section 1</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#section2">Section 2</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#section3">Section 3</a>
+              </li>
+              </ul>
+          </div>
+        </nav>
+    
+        <!-- 在內文區塊設定好各個id (作為 <a href=""> 和 scroll 尋找對應的依據) -->
+        <div id="section1" class="container-fluid bg-success text-white" style="padding:100px 20px;">
+        <h1>Section 1</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        </div>
+    
+        <div id="section2" class="container-fluid bg-warning" style="padding:100px 20px;">
+        <h1>Section 2</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        </div>
+    
+        <div id="section3" class="container-fluid bg-secondary text-white" style="padding:100px 20px;">
+        <h1>Section 3</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        </div>
+    </div>
+    <hr>
+
+    <section id="Offcanvas">
+
+        <!-- Offcanvas Sidebar -->
+        <div class="offcanvas offcanvas-start offcanvas-lg text-bg-dark" id="demo">
+          <!-- offcanvas-start|end|top|bottom 位置(方向), 
+            offcanvas-lg 尺寸超過lg則不顯示(需連同button一起設定 .d-lg-none),
+            text-bg-dark 深色模式-->
+          <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Heading</h1>
+            <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas"></button>
+            <!-- btn-close-white 深色模式 -->
+          </div>
+          <div class="offcanvas-body">
+            <p>Some text lorem ipsum.</p>
+            <p>Some text lorem ipsum.</p>
+          </div>
+        </div>
+    
+        <!-- Button to open the offcanvas sidebar -->
+        <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+          Open Offcanvas Sidebar
+        </button>
+    </section>
+
+    <section id="utility">
+      <h2>Utility1</h2>
+      <div class="container mt-3">
+        <div class="shadow-none">No shadow</div>
+        <div class="shadow-sm">Small shadow</div>
+        <div class="shadow">Default shadow</div>
+        <div class="shadow-lg">Large shadow</div>
+      </div>
+      <hr>
+      <div class="container mt-3">
+        <span class="border"></span>
+        <span class="border border-0"></span>
+        <span class="border border-top-0 border-danger"></span>
+        <span class="border border-end-0 border-success"></span>
+        <span class="border border-bottom-0 border-primary"></span>
+        <span class="border border-start-0"></span>
+        <hr> 
+        <span class="border-top"></span>
+        <span class="border-end"></span>
+        <span class="border-bottom"></span>
+        <span class="border-start"></span>
+        <hr>
+        <span class="border border-1"></span>
+        <span class="border border-2"></span>
+        <span class="border border-3"></span>
+        <span class="border border-4"></span>
+        <span class="border border-5"></span>
+        <hr>
+        <span class="rounded"></span>
+        <span class="rounded-top"></span>
+        <span class="rounded-end"></span>
+        <span class="rounded-bottom"></span>
+        <span class="rounded-start"></span>
+        <span class="rounded-circle"></span>
+        <span class="rounded-pill" style="width:130px"></span>
+        <span class="rounded-0"></span>
+        <span class="rounded-1"></span>
+        <span class="rounded-2"></span>
+        <span class="rounded-3"></span>
+        <span class="rounded-4"></span>
+        <span class="rounded-5"></span>
+        <hr>
+        <h4><mark>visible</mark></h4>
+        <div class="visible">I am visible</div>
+        <div class="invisible">I am invisible</div>
+      </div>     
+      <hr>
+
+      <div class="container mt-3">
+        <h2>Contextual Colors</h2>
+        <p class="text-muted">This text is muted.</p>
+        <p class="text-primary">This text is important.</p>
+        <p class="text-success">This text indicates success.</p>
+        <p class="text-info">This text represents some information.</p>
+        <p class="text-warning">This text represents a warning.</p>
+        <p class="text-danger">This text represents danger.</p>
+        <p class="text-secondary">Secondary text.</p>
+        <p class="text-dark">This text is dark grey.</p>
+        <p class="text-body">Default body color (often black).</p>
+        <p class="text-light bg-success bg-opacity-50">This text is light grey (on success opacity-25 background).</p>
+        <p class="text-white bg-dark">This text is white (on dark background).</p>
+        <p class="text-white-50 bg-dark">This text is text-white-50 (on dark background).</p>
+        <p class="text-black-50">This text is text-black-50.</p>
+      </div>
+      <hr>
+      <div class="opacity-100">.opacity-100</div>
+      <div class="opacity-75">.opacity-75</div>
+      <div class="opacity-50">.opacity-50</div>
+      <div class="opacity-25">.opacity-25</div>
+      <hr>
+      <div class="container mt-3">
+        <h2>Background Color with Contrasting Text Color</h2>
+        <p class="text-bg-primary">This text is important.</p>
+        <p class="text-bg-success">This text indicates success.</p>
+        <p class="text-bg-info">This text represents some information.</p>
+        <p class="text-bg-warning">This text represents a warning.</p>
+        <p class="text-bg-danger">This text represents danger.</p>
+        <p class="text-bg-secondary">Secondary background color.</p>
+        <p class="text-bg-dark">Dark grey background color.</p>
+        <p class="text-bg-light">Light grey background color.</p>
+      </div>
+
+      <hr>
+      <div class="container mt-3">
+        <h2>Screen readers</h2>
+        <p>Use the .sr-only class to hide an element on all devices, except screen readers:</p>
+        <span class="visually-hidden">I will be hidden on all screens except for screen readers.</span>
+      </div>
+    </section>
+    <hr>
+
+    <section id="layout">
+      <div class="container">
+        <h2>Flex layout</h2>
+        <p>.d-flex flex-row</p>
+        <div class="d-flex flex-row bg-secondary">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex flex-row-reverse</p>
+        <div class="d-flex flex-row-reverse bg-secondary">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex flex-column</p>
+        <div class="d-flex flex-column">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex flex-column-reverse</p>
+        <div class="d-flex flex-column-reverse">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-inline-flex flex-column</p>
+        <div class="d-inline-flex flex-column">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex justify-content-start</p>
+        <div class="d-flex justify-content-start bg-secondary mb-3">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex justify-content-end</p>
+        <div class="d-flex justify-content-end bg-secondary mb-3">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex justify-content-center</p>
+        <div class="d-flex justify-content-center bg-secondary mb-3">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex justify-content-between</p>
+        <div class="d-flex justify-content-between bg-secondary mb-3">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex justify-content-around</p>
+        <div class="d-flex justify-content-around bg-secondary mb-3">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex > .flex-fill</p>
+        <div class="d-flex">
+          <div class="p-2 bg-info flex-fill">Flex item 1</div>
+          <div class="p-2 bg-warning flex-fill">Flex item 2</div>
+          <div class="p-2 bg-primary flex-fill">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex > .flex-grow-1 佔據剩餘空間</p>
+        <div class="d-flex">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary flex-grow-1">Flex item 3</div>
+        </div>
+        <hr>
+        <p>.d-flex > .order-* 指定順序</p>
+        <div class="d-flex">
+          <div class="p-2 bg-info order-3">Flex item 1</div>
+          <div class="p-2 bg-warning order-2">Flex item 2</div>
+          <div class="p-2 bg-primary order-1">Flex item 3</div>
+        </div>
+        <hr>
+        <p>加上 flex-wrap|flex-wrap-reverse|flex-nowrap 改變多個元素時的排列方式</p>
+        <p>加上 align-content-start|end|center|around|stretch 改變多個元素時的對齊方式</p>
+        <p>加上 align-items-start|end|center|baseline|stretch 改變垂直對齊位置</p>
+        <hr>
+        <p>對特定元素加上 align-self-start|end|center|baseline|stretch 改變相對位置</p>
+        <div class="d-flex bg-light" style="height:150px">
+          <div class="p-2 border">Flex item 1</div>
+          <div class="p-2 border align-self-start">Flex item 2</div>
+          <div class="p-2 border">Flex item 3</div>
+        </div>
+        <hr>
+        <p>RWD斷點調整 詳w3school</p>
+
+      <hr>
+      <div class="container">
+
+        <div class="clearfix">
+          <span class="float-start">Float left</span>
+          <span class="float-end">Float right</span>
+        </div>
+    
+        <div class="float-sm-end">Float right on small screens or wider</div><br>
+        <div class="float-md-end">Float right on medium screens or wider</div><br>
+        <div class="float-lg-end">Float right on large screens or wider</div><br>
+        <div class="float-xl-end">Float right on extra large screens or wider</div><br>
+        <div class="float-xxl-end">Float right on XXL screens or wider</div><br>
+        <div class="float-none">Float none</div>
+  
+        <div class="mx-auto" style="width:150px; background-color: skyblue">Centered (.mx-auto)</div>
+  
+        <div class="w-25" style="background-color: skyblue;">Width 25% (.w-25)</div>
+        <div class="w-50" style="background-color: wheat;">Width 50% (.w-50)</div>
+        <div class="w-75" style="background-color: skyblue;">Width 75% (.w-75)</div>
+        <div class="w-100" style="background-color: wheat;">Width 100% (.w-100)</div>
+        <div class="w-auto" style="background-color: skyblue;">Auto Width (.w-auto)</div>
+        <div class="mw-100" style="background-color: wheat;">Max Width 100% (.mw-100)</div>
+        <br>
+        <div style="height:200px;">
+          <div class="h-25" style="background-color: wheat;">Height 25% (.h-25)</div>
+          <div class="h-50" style="background-color: skyblue;">Height 50% (.h-50)</div>
+          <div class="h-75" style="background-color: wheat;">Height 75% (.h-75)</div>
+          <div class="h-100" style="background-color: skyblue;">Height 100% (.h-100)</div>
+          <div class="h-auto" style="background-color: wheat;">Auto Height (.h-auto)</div>
+          <div class="mh-100" style="height:500px;background-color: skyblue;">Max Height 100% (.mh-100)</div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>

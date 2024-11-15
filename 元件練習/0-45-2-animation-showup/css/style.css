@@ -1,0 +1,166 @@
+/* -------------
+    Global
+--------------- */
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+h2,p{
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+/* -------------
+    Component
+--------------- */
+
+/* --------------------- 所有項目外框 -------------------- */
+.hero{
+    padding: 200px 0;
+}
+/* --------------------- 各項目外框 -------------------- */
+
+/* 設定底部間距,除了最後一項*/
+.product-item:not(:last-child){
+    margin-bottom: 320px;
+}
+/* --------------------- 圖片 -------------------- */
+/* 圖片框: 定位圖片在頁面中的位置 */
+.image-container{
+    width: 100%;
+    display: block;
+    position: relative; /*註1*/
+}
+/* 圖片框偽元素before: 撐出圖片框的大小 */
+.image-container:before{
+    content: '';
+    display: block;
+    padding-top: 133.333%; /*133.33%是3:4的圖片尺寸*/
+}
+/* 圖片: 用背景填滿的方式置入圖片,並設定效果 */
+.image-container .image{
+    position: absolute; /*註1*/
+    /* way1 */
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* way2 */
+    /* width: 100%; height: 100%; */
+    background-position: center;
+    background-repeat: none;
+    background-size:cover;
+}
+
+/* 註2:另外寫一個 圖片框長寬1:1 的樣式 */
+.image-ratio-1-1:before{
+    padding-top: 100%;
+}
+/* --------------------- 標題文字 -------------------- */
+.product-item .title{
+    font-size: 64px;
+    color: #484848;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+/* 另外寫一個 title向左位移 的樣式 */
+.product-item .title.title--left{
+    margin-left: -64px;
+}
+/* --------------------- 內容文字 -------------------- */
+.product-item .para{
+    font-size: 20px;
+    line-height: 32px;
+    color: #484848;
+    font-weight: 300;
+    margin-bottom: 48px;
+    letter-spacing: 1px;
+}
+/* --------------------- 按鈕 -------------------- */
+.btn{
+    display: inline-block;
+    color: #666;
+    text-decoration: none;
+    border: 2px solid #666;
+    padding: 16px 32px;
+    border-radius: 5px;
+    font-weight: 600;
+    vertical-align: top;  /*多個按鈕的話 需有此設定*/
+
+    transition: all 0.3s;
+}
+.btn:hover{
+    background-color: #666;
+    color: #fff;
+}
+
+/* -------------
+    Animation
+--------------- */
+
+/* --------------------- 圖片進場動畫 -------------------- */
+/* 利用現有class的偽元素做: 省去再多加一個html結構; 讓.image可專職於圖片淡入動畫, 而:after插入點是在.image後方,可蓋住 */
+.product-item.animated .image-container:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 0px;
+    background-color: #484848;
+
+    animation: 
+        ani-drawLine 0.3s forwards,
+        ani-fillWidth 0.2s 0.3s forwards,
+        ani-blockOut 0.2s 0.5s forwards
+        ;
+}
+@keyframes ani-drawLine{
+    0%{width: 8px; height: 0px;}
+    100%{width: 8px; height: 100%;}
+}
+@keyframes ani-fillWidth{
+    0%{width: 8px;}
+    100%{width: 100%;}
+}
+@keyframes ani-blockOut{
+    0%{width: 100%;left: initial; right: 0;} 
+        /*left: initial (初始化),以取消原本設定為left:0*/
+        /* 有些瀏覽器不支援initial, 需改成 left:inherit (繼承父層) */
+    100%{width: 0%; left: initial; right: 0;}
+}
+.product-item.animated .image-container .image{
+    animation:ani-fadeIn 0.5s 0.6s backwards;
+    /* way2 forwards + opacity:0 */
+}
+@keyframes ani-fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+/* --------------------- 文字進場動畫 -------------------- */
+/* 註3:wow.js有設定 隨著捲軸滾動,會自動加上.animated,藉此設定到該區塊才啟動進場動話 */
+.product-item.animated .title{
+    animation: ani-fadeInUp 0.5s 0.5s backwards;
+    /* way2 : forwards + opacity:0 */
+}
+.product-item.animated .para{
+    animation: ani-fadeInUp 0.5s 0.65s backwards;
+}
+.product-item.animated .btn{
+    animation: ani-fadeInUp 0.5s 0.8s backwards;
+}
+
+@keyframes ani-fadeInUp{
+    0%{
+        transform: translate(0,50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+
+/* --------------------- 滾動視差效果 -------------------- */
+/* 
+引入rellax.js檔 → 設定初始化及option → 
+將class="rellax" 及 data-rellax-speed=-2 加入應用元件(設定滾動速度)
+*/

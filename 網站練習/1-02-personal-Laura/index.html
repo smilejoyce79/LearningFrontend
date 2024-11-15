@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- initial -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Gupter:wght@400;500;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Gupter:wght@400;500;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Fancyapps Slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.css"/>
+    <!-- Fancyapps ImageBox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <!-- custom -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Laura personal</title>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- TODO: 改成切版前就先分析好'共用樣式'的命名、格線系統、RWD的各種情況、改用套件的方式,再微調需客製化的元素 -->
+
+        <!-- TODO: RWD適應調整 -->
+        <!-- TODO: 進場動畫效果 -->
+        <!-- TODO: 點nav會滾動到定位, 並顯示當前位置在哪個nav-->
+        <header>
+            <div class="navbar">
+                <div class="logo">Laura</div>
+                <div class="nav-menu">
+                    <div class="nav-item">
+                        <a href="#!" class="nav-link">HOME</a>
+                        <a href="#!" class="nav-link">ABOUT</a>
+                        <a href="#!" class="nav-link">RESUME</a>
+                        <a href="#!" class="nav-link">SERVICES</a>
+                        <a href="#!" class="nav-link">PORTFOLIO</a>
+                        <a href="#!" class="nav-link">DROPDOWN</a>
+                        <!-- todo 下拉式選單 -->
+                        <a href="#!" class="nav-link">CONTACT</a>
+                    </div>
+                </div>
+                <ul class="social-icon">
+                    <li class="social-item">
+                        <a href="#!" class="social-link bx bxl-twitter"></a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#!" class="social-link bx bxl-facebook-circle"></a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#!" class="social-link bx bxl-instagram"></a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#!" class="social-link bx bxl-linkedin-square"></a>
+                    </li>
+                </ul>
+            </div>
+        <!-- TODO: 用@media設定"小navbar選單按鈕"的display:block或none切換,用js設定若點擊到"小navbar選單"就在toggle加上小裝置時的class樣式 -->
+
+        </header>
+    
+        <div class="jumbotron">
+            <div class="jum-info">
+                <h1 class="jum-title">Laura Thomson</h1>
+                <p class="jum-des">I'm a Professional Photographer In New York City</p>
+                <div class="jum-down-icon">⇓</div>
+                <!-- TODO: 向下的箭頭動畫 <a href='#about'> -->
+                <!--TODO: 遮罩做在::before-->
+                <!-- TOOD: 各行內文是用flex-direction:column的方式排列&置中對齊 -->
+            </div>
+        </div>
+    
+        <main class="main">
+    
+            <section class="aboutMe">
+                <div class="hero">
+                    <div class="container">
+                        <div class="info">
+                            <h2 class="title">ABOUT ME</h2>
+                            <div class="title-shadow">ABOUT ME</div>
+                            <p class="des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, voluptatem.</p>
+                        </div> 
+                        <div class="row">
+                            <div class="col col-1-3">
+                                <div class="aboutMe-image-container">
+                                    <img class="aboutMe-image" src="/img/me.jpg" alt="" width="400px" height="650px">
+                                </div>
+                                <!-- 記住: img要用一個div作為container才會在頁面上佔有空間 -->
+                                <!--?問題: 5.圖片大小我是「指定寬高px」的方式，但若考慮到RWD會需要能跟著頁面縮放，是否應改用___%的方法較佳? 但以此圖為例，要怎麼改用___%方法? (需搭配父層的寬高、display、position設定) -->
+                            </div>
+                            <div class="col col-1-3">
+                                <h3>UI/UX Designer & Web Developer.</h3>
+                                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
+                               <ul>
+                                    <li><b>Birthday:</b> 1 May 1995</li>
+                                    <li><b>Website:</b> www.example.com</li>
+                                    <li><b>Phone:</b> +123 456 7890</li>
+                                    <li><b>City:</b>New York, USA</li>
+                                </ul>
+                                <p>Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.</p>
+                                <!-- TODO: 改放在上層div, 不要放在col內  (想像網頁畫面是立體的,放較浮上來的那層)-->
+                            </div>
+                            <div class="col col-1-3">
+                                <h2>　</h2>
+                                <p>　</p>
+                                    <!-- TODO: 勿用空格,改用padding或margin -->
+                                    <ul>
+                                    <li><b>Age:</b> 30</li>
+                                    <li><b>Degree:</b> Master</li>
+                                    <li><b>Email:</b> email@example.com</li>
+                                    <li><b>Freelance:</b>Available</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        
+            <section class="myResume">
+                <div class="hero">
+                    <div class="container">
+                        <div class="info">
+                            <h2 class="title">MY RESUME</h2>
+                            <div class="title-shadow">MY RESUME</div>
+                            <p class="des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, voluptatem.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col col-1-2">
+                                <h3>Sumary</h3>
+                                <div class="resume-item">
+                                    <h4>Brandon Johnson</h4>
+                                    <i>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</i>
+                                    <ul>
+                                        <li>Portland par 127,Orlando, FL</li>
+                                        <li>(123) 456-7891</li>
+                                        <li>alice.barkley@example.com</li>
+                                    </ul>
+                                    <!-- TODO 加上電話及mail超連結 -->
+
+                                </div>
+                                <h3>Education</h3>
+                                <div class="resume-item">
+                                    <h4>Master of Fine Arts & Graphic Design</h4>
+                                    <h5>2015 - 2016</h5>
+                                    <i>Rochester Institute of Technology, Rochester, NY</i>
+                                    <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>                                    
+                                </div>
+                                <div class="resume-item">
+                                    <h4>Bachelor of Fine Arts & Graphic Design</h4>
+                                    <h5>2010 - 2014</h5>
+                                    <i>Rochester Institute of Technology, Rochester, NY</i>
+                                    <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
+                                </div>
+                            </div>
+                            <div class="col col-1-2">
+                                <h3>Professional Experience</h3>
+                                <div class="resume-item">
+                                    <h4>Senior graphic design specialist</h4>
+                                    <h5>2019 - Present</h5>
+                                    <i>Experion, New York, NY</i>
+                                    <ul>
+                                        <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                                        <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project.</li>
+                                        <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                                        <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                                    </ul>                                    
+                                </div>
+                                <div class="resume-item">
+                                    <h4>Graphic design specialist</h4>
+                                    <h5>2017 - 2018</h5>
+                                    <i>Stepping Stone Advertising, New York, NY</i>
+                                    <ul>
+                                        <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+                                        <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                                        <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                                        <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+                                    </ul>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="myServices">
+                <div class="hero">
+                    <div class="container">
+                        <div class="info">
+                            <h2 class="title">MY SERVICES</h2>
+                            <span class="title-shadow">MY SERVICES</span>
+                            <p class="des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, voluptatem.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col col-1-4">
+                                <div class="card">
+                                    <!-- TODO: 游標懸停時, 背景色會滿起來的動畫 -->
+                                    <div class="icon">
+                                        <i class='bx bx-trending-up'></i>
+                                    </div>
+                                    <h4>Lorem ipsum</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quas.</p>
+                                </div>
+                            </div>
+                            <div class="col col-1-4">
+                                <div class="card">
+                                    <div class="icon">
+                                        <i class='bx bx-network-chart'></i>
+                                    </div>
+                                    <h4>Lorem ipsum</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quas.</p>
+                                </div>
+                            </div>                    
+                            <div class="col col-1-4">
+                                <div class="card">
+                                    <div class="icon">
+                                        <i class='bx bx-calendar'></i>
+                                    </div>
+                                    <h4>Lorem ipsum</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quas.</p>
+                                </div>
+                            </div>                    
+                            <div class="col col-1-4">
+                                <div class="card">
+                                    <div class="icon">
+                                        <i class='bx bx-station'></i>
+                                    </div>
+                                    <h4>Lorem ipsum</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quas.</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="comment">
+                <div>
+                    <div class="f-carousel" id="myCarousel">
+                      <div class="f-carousel__slide">
+                        <div class="comment-item">
+                            <div class="comment-info">
+                                <img src="/img/testimonials/testimonials-1.jpg" alt="" style="height: 100px; width: 100px;">
+                                <h3>Jena Karlis</h3>
+                                <h4>Store Owner</h4>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><q>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</q></p>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="f-carousel__slide">
+                        <div class="comment-item">
+                            <div class="comment-info">
+                                <img src="/img/testimonials/testimonials-2.jpg" alt="" style="height: 100px; width: 100px;">
+                                <h3>Matt Brandon</h3>
+                                <h4>Freelancer</h4>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><q>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</q></p>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="f-carousel__slide">
+                        <div class="comment-item">
+                            <div class="comment-info">
+                                <img src="/img/testimonials/testimonials-3.jpg" alt="" style="height: 100px; width: 100px;">
+                                <h3>John Larson</h3>
+                                <h4>Entrepreneur</h4>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><q>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</q></p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+            </section>
+        
+            <section class="portfolio">
+                <div class="hero">
+                        <div class="info">
+                            <h2 class="title">PORTFOLIO</h2>
+                            <div class="title-shadow">PORTFOLIO</div>
+                            <p class="des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, voluptatem.</p>
+                        </div>
+                        <!-- ?問題: 9.為什麼portfolio的navbar不會自動接著info排在下面? 怎麼騰出info和image-container之間的空間, 讓這行bar不會遮蓋到? -->
+
+                        <div class="navbar">
+                            <div class="nav-menu">
+                                <div class="nav-item">
+                                    <a href="#!" class="nav-link">All</a>
+                                    <a href="#!" class="nav-link">App</a>
+                                    <a href="#!" class="nav-link">Product</a>
+                                    <a href="#!" class="nav-link">Branding</a>
+                                    <a href="#!" class="nav-link">Books</a>
+                                    <!--TODO: 改成'可篩選列示不同類別'的自動排列  -->
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="image-container">
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-1.jpg" data-caption="portfolio-1">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-1.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-2.jpg" data-caption="portfolio-2">
+                                    <div class="imagebox-img" style="background-image: url(/img/portfolio/portfolio-2.jpg);"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-3.jpg" data-caption="portfolio-3">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-3.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-4.jpg" data-caption="portfolio-4">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-4.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-5.jpg" data-caption="portfolio-5">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-5.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-6.jpg" data-caption="portfolio-6">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-6.jpg');"></div>
+                                </a>
+                            </div>                    
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-7.jpg" data-caption="portfolio-7">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-7.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-8.jpg" data-caption="portfolio-8">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-8.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-9.jpg" data-caption="portfolio-9">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-9.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image"></div>
+                            <div class="image"></div>
+                            <div class="image"></div>
+                            <!-- ?問題: 10.圖片放置的方式好像有點繁瑣? 有其他較好的方法嗎? 假設實務上遇到要置入50張以上的大量照片，會怎麼寫呢? (像是可以「用迴圈自動依序置入多張照片」或「弄成群組、模組化一併設定」之類的...?) -->
+                             <!-- TODO:把圖片的url存成array，然後用.map()來迴圈處理 -->
+                        </div>
+
+                </div>
+            </section>
+        
+            <section class="pricing">
+                <div class="hero">
+                    <div class="container">
+                        <div class="info">
+                            <h2 class="title">PRICING</h2>
+                            <div class="title-shadow">PRICING</div>
+                            <p class="des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, voluptatem.</p>
+                        </div>
+                            <div class="row pricing-section1">
+                                <div class="col col-1-3">
+                                    <div class="card">
+                                        <h2>Free</h2>
+                                        <p class="price"><span><sup>$</sup>0 </span>/ month</p>
+                                        <p>Lorem ipsum </p>
+                                        <p>dolor sit amet</p>
+                                        <p>consectetur adipisicing</p>
+                                        <p>elit Fugiat</p>
+                                        <p><del>veritatis facilis</del></p>
+                                        <p><del>eos molestiae </del></p>
+                                        <button>Buy Now</button>
+                                    </div>
+                                </div>
+                                <div class="col col-1-3">
+                                    <div class="card">
+                                        <h4>Recommended</h4>
+                                        <h2>Business</h2>
+                                        <p class="price"><span><sup>$</sup>19 </span>/ month</p>
+                                        <p>Lorem ipsum </p>
+                                        <p>dolor sit amet</p>
+                                        <p>consectetur adipisicing</p>
+                                        <p>elit Fugiat</p>
+                                        <p>veritatis facilis</p>
+                                        <p><del>eos molestiae</del></p>
+                                        <button>Buy Now</button>
+                                    </div>
+                                </div>
+                                <div class="col col-1-3">
+                                    <div class="card">
+                                        <h2>Developer</h2>
+                                        <p class="price"><span><sup>$</sup>29 </span>/ month</p>
+                                        <p>Lorem ipsum </p>
+                                        <p>dolor sit amet</p>
+                                        <p>consectetur adipisicing</p>
+                                        <p>elit Fugiat</p>
+                                        <p>veritatis facilis</p>
+                                        <p>eos molestiae</p>
+                                        <button>Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pricing-section2">
+                                <div class="col col-1-2">
+                                    <div class="price-item">
+                                        <h3>Portrait Photography</h3>
+                                        <p>$160.00</p>
+                                    </div>
+                                    <div class="price-item">
+                                        <h3>Sports Photography</h3>
+                                        <p>$200.00</p>
+                                    </div>
+                                    <div class="price-item">
+                                        <h3>Wedding Photography</h3>
+                                        <p>$500.00</p>
+                                    </div>
+                                </div>
+                                <div class="col col-1-2">
+                                    <div class="price-item">
+                                        <h3>Fashion Photography</h3>
+                                        <p>$300.00</p>
+                                    </div>
+                                    <div class="price-item">
+                                        <h3>Still Life Photography</h3>
+                                        <p>$120.00</p>
+                                    </div>
+                                    <div class="price-item">
+                                        <h3>Photojournalism</h3>
+                                        <p>$200.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </section>
+        
+            <section class="gallery">
+                <div class="hero">
+                        <div class="info">
+                            <h2 class="title">GALLERY</h2>
+                            <div class="title-shadow">GALLERY</div>
+                            <p class="des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, voluptatem.</p>
+                        </div>
+                        <div class="image-container">
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-1.jpg" data-caption="portfolio-1">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-1.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-2.jpg" data-caption="portfolio-2">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-2.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-3.jpg" data-caption="portfolio-3">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-3.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-4.jpg" data-caption="portfolio-4">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-4.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-5.jpg" data-caption="portfolio-5">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-5.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-6.jpg" data-caption="portfolio-6">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-6.jpg');"></div>
+                                </a>
+                            </div>                    
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-7.jpg" data-caption="portfolio-7">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-7.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-8.jpg" data-caption="portfolio-8">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-8.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-5.jpg" data-caption="portfolio-5">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-5.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-6.jpg" data-caption="portfolio-6">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-6.jpg');"></div>
+                                </a>
+                            </div>                    
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-7.jpg" data-caption="portfolio-7">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-7.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a data-fancybox href="/img/portfolio/portfolio-8.jpg" data-caption="portfolio-8">
+                                    <div class="imagebox-img" style="background-image: url('/img/portfolio/portfolio-8.jpg');"></div>
+                                </a>
+                            </div>
+                        </div>
+                </div>
+            </section>
+
+            <section class="contact">
+                <div class="hero">
+                    <div class="container">
+                        <div class="info">
+                            <h2 class="title">CONTACT</h2>
+                            <div class="title-shadow">CONTACT</div>
+                            <p class="des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, voluptatem.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col col-1-3">
+                                <i class='bx bx-current-location'></i>
+                                <h2>Address</h2>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                            <div class="col col-1-3">
+                                <i class='bx bx-phone' ></i>
+                                <h2>Call use</h2>
+                                <p>+1 5589 55488 55</p>
+                            </div>
+                            <div class="col col-1-3">
+                                <i class='bx bx-envelope' ></i>
+                                <h2>Email Us</h2>
+                                <p>info@example.com</p>
+                            </div>
+                        </div>
+                        <form action="" class="contact-form">
+                            <div class="row">
+                                <div class="col col-1-2 padding-rt-10px">
+                                    <input id="contact-form-name" width="200px" type="text" placeholder="Your Name">
+                                </div>
+                                <div class="col col-1-2 padding-lt-10px">
+                                    <input id="contact-form-email" width="100px" type="text" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <input id="contact-form-subject" type="text" placeholder="Subject">
+                            <textarea id="contact-form-message" placeholder="Message" rows="10"></textarea>
+                            <button id="contact-form-submit" type="submit">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- TODO: 送出後彈出視窗:loading & 傳送成功 -->
+            </section>
+            
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="info">
+                    <h2 class="title">Laura Thomson</h2>
+                    <p class="des"><em>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, voluptatem.</em></p>
+                </div>
+            </div>
+            <ul>
+                <!-- 記住:用<a>負責連結路徑&文字符號(icon), <a>的<父層>負責按鈕樣式及hover效果-->
+                <li class="footer-item"><a href="#!" class="footer-link bx bxl-twitter"></a></li>
+                <li class="footer-item"><a href="#!" class="footer-link bx bxl-facebook-circle"></a></li>
+                <li class="footer-item"><a href="#!" class="footer-link bx bxl-instagram"></a></li>
+                <li class="footer-item"><a href="#!" class="footer-link bx bxl-linkedin-square"></a></li>
+            </ul>
+            <p>Copyright <strong>Laura</strong> All Rights Reserved</p>
+            <p>Designed by <a href="#!">BootstrapMade</a></p>
+        </footer>
+        <div class="to-top-button">
+            <a href="#" class="bx bxs-arrow-to-top"></a>
+        </div>
+    </div>
+    
+</body>
+
+<!-- slider -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.umd.js"></script>
+
+<!-- ImageBox -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+<script>
+    // -------- Slider --------
+      new Carousel(document.getElementById("myCarousel"), {
+        Autoplay : {
+          timeout : 3000
+        }
+      }, {
+        Autoplay
+      });
+
+    //-------- ImageBox --------
+    Fancybox.bind('[data-fancybox]', {
+        //
+      });   
+</script>
+</html>

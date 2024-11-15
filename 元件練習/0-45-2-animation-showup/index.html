@@ -1,0 +1,98 @@
+<!-- 
+使用 animate.css、wow.js 進場動畫
+使用 bootstrap-grid.css 排版及RWD
+使用 rellax.js 滾動視差效果
+
+-->
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation showup</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hero">
+            <div class="container">
+                <div class="product-item wow">
+                    <div class="row align-items-center">
+                        <!-- align-items-center: bootstrap grid 提供的flex 垂直置中 樣式 -->
+                        <div class="col-lg-6 order-lg-1">
+                            <div class="image-container rellax data-rellax-speed='4' ">
+                                <!-- 註2 -->
+                                <div class="image" style="background-image: url('./images/img1.jpg');"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-2">
+                            <h2 class="title title--left">Lorem ipsum dolor sit amet.</h2>
+                            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ex autem officia aliquid voluptatem, expedita ea quo cupiditate delectus a accusamus repellendus quod laborum cum dolorum sequi nam ducimus cumque.</p>
+                            <a href="#!" class="btn">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item wow">
+                <!-- class加上animate__animated animate__swing 會有animate.css內建的彈跳效果-->
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-2">
+                            <!-- order-lg-2 : bootstrap grid 提供'可指定順序、可依RWD尺寸選填'的樣式 ; 比起手動改html架構更有利做RWD調整,及模組化管理佳-->
+                            <div class="image-container rellax data-rellax-speed='4'  image-ratio-1-1">
+                                <!-- 註2 -->
+                                <div class="image" style="background-image: url('./images/img2.jpg');"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-1">
+                            <h2 class="title">Lorem ipsum dolor sit amet.</h2>
+                            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ex autem officia aliquid voluptatem, expedita ea quo cupiditate delectus a accusamus repellendus quod laborum cum dolorum sequi nam ducimus cumque.</p>
+                            <a href="#!" class="btn">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item wow">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-1">
+                            <div class="image-container rellax data-rellax-speed='4' ">
+                                <div class="image" style="background-image: url('./images/img3.jpg');"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-2">
+                            <h2 class="title title--left">Lorem ipsum dolor sit amet.</h2>
+                            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ex autem officia aliquid voluptatem, expedita ea quo cupiditate delectus a accusamus repellendus quod laborum cum dolorum sequi nam ducimus cumque.</p>
+                            <a href="#!" class="btn">EN SAVOIR PLUS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/js/wow.min.js"></script>
+<script src="/js/rellax.min.js"></script>
+
+<script>
+    //------ wow.js ------
+    // 依據wow.js使用說明 載入& 初始& 設定option
+    // 並借用 自動添加.animated 的預設, 增設自訂動畫
+    wow = new WOW({
+        boxClass:     'wow',      // 可改class="wow"名稱
+        animateClass: 'animated', // 註3
+        offset:200,          // 設定卷軸往下滾到什麼程度才會啟動動畫
+        // mobile:       true,       // 行動裝置是否撥放動畫
+    })
+    wow.init();
+
+    //------ rellax.js ------
+    // 引入js檔 → 設定初始化及option → 將class="rellax" 及 data-rellax-speed=-2 加入應用元件(設定滾動速度)
+    var rellax = new Rellax('.rellax', {
+        center: true,
+    });
+
+</script>
+
+</html>

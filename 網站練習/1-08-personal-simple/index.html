@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-bs-theme="light"> <!--1-08 easyPersonal bootstrap-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" integrity="sha512-/AilQf/shuEGfh8c3DoIqcIqHZCKpiImSyt+fxIKJphHiNa6QMPb6AbDly6rkjmGr/5OZd35JtvVkbEKnCZO+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/custom.css">    
+    <title>1-08 personalBootstrapLevel1</title>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50" >
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#">Logo</a>
+        <button class="navbar-toggler py-2 my-auto bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="">Menu</span><i class="bi bi-list fs-5 ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item ">
+                    <a class="nav-link fw-bold fs-5 m-1" aria-current="page" href="#portfolio">1-1 Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold fs-5 m-1" href="#about">1-2 About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold fs-5 m-1" href="#contact">1-3 Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link fw-bold fs-5 dropdown-toggle m-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        1-4 Nav
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">1-4-1</a></li>
+                    <li><a class="dropdown-item" href="#">1-4-2</a></li>
+                    <li><a class="dropdown-item" href="#">1-4-3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <!-- jumbotron -->
+    <div class="p-5 bg-primary rounded-3">
+        <div class="container-fluid py-5">
+            <img class="mx-auto d-block" src="./img/avataaars.svg" alt="" width="150px">
+            <h1 class="display-5 fw-bold text-center text-light">2-1 jumboton</h1>
+            <p class="text-center text-light">2-2 jumboton</p>
+        </div>
+    </div>
+
+    <!-- portfolio -->
+    <section id="portfolio" class="container mx-auto p-3 mb-4">
+        <h1 class="text-uppercase text-center my-3 mb-4">3-1 portfolio</h1>
+        <div class="d-flex flex-wrap gap-3 justify-content-center me-5 ms-5">
+            <div class="myimg-hover">
+                <img src="./img/img1.png" class="rounded" alt="3-1 image" width="304" height="236" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            </div>
+            <div class="myimg-hover">
+                <img src="./img/img1.png" class="rounded" alt="3-1 image" width="304" height="236" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            </div>
+            <div class="myimg-hover">
+                <img src="./img/img1.png" class="rounded" alt="3-1 image" width="304" height="236" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+            </div>
+            <div class="myimg-hover">
+                <img src="./img/img1.png" class="rounded" alt="3-1 image" width="304" height="236" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+            </div>
+            <div class="myimg-hover">
+                <img src="./img/img1.png" class="rounded" alt="3-1 image" width="304" height="236" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+            </div>
+            <div class="myimg-hover">
+                <img src="./img/img1.png" class="rounded" alt="3-1 image" width="304" height="236" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+            </div>
+        </div>
+    </section>
+
+    <!-- !優化: 改用javascript迭代引入每一張圖 -->
+    <!-- Modal 1-->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">7-1 Log Cabin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <img src="./img/img1.png" class="mb-4" alt="7-1 image" width="304" height="236">
+                        <h6>7-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">7-3 Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2-->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">8-1 Log Cabin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <img src="./img/img1.png" class="mb-4" alt="7-1 image" width="304" height="236">
+                        <h6>8-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">8-3 Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 3-->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">9-1 Log Cabin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <img src="./img/img1.png" class="mb-4" alt="7-1 image" width="304" height="236">
+                        <h6>9-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">9-3 Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 4-->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">10-1 Log Cabin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <img src="./img/img1.png" class="mb-4" alt="7-1 image" width="304" height="236">
+                        <h6>10-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">10-3 Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 5-->
+    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">11-1 Log Cabin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <img src="./img/img1.png" class="mb-4" alt="7-1 image" width="304" height="236">
+                        <h6>11-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">11-3 Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 6-->
+    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">12-1 Log Cabin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <img src="./img/img1.png" class="mb-4" alt="7-1 image" width="304" height="236">
+                        <h6>12-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</h6>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">12-3 Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- about -->
+    <section id="about" class="container-fluid mx-auto bg-primary py-2">
+        <h1 class="text-uppercase text-center my-3 mb-4 text-light">4-1 about</h1>
+        <div class="row g-5 justify-content-center">
+            <div class="col-lg-5 col-sm-12 text-light">
+                4-2 Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization. 
+            </div>
+            <div class="col-lg-5 col-sm-12 text-light">
+                4-3 You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!
+            </div>
+        </div>
+        <div  class="d-flex justify-content-center m-3" >
+            <button class="btn btn-lg text-capitalize text-center btn-outline-light">4-4 free download</button>
+        </div>
+    </section>
+
+    <!-- contact me -->
+    <section id="contact" class="container mx-auto p-2 mb-3">
+        <h1 class="text-uppercase text-center my-3 mb-4">5-1 contact me</h1>
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column align-items-center w-100">
+                <div class="form-floating mb-3 w-75">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="">
+                    <label for="floatingInput">5-2 Full Name</label>
+                </div>
+                <div class="form-floating mb-3 w-75">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">5-3 Email Address</label>
+                </div>
+                <div class="form-floating mb-3 w-75">
+                    <input type="tell" class="form-control" id="floatingInput" placeholder="123-456-7890">
+                    <label for="floatingInput">5-4 Phone Number</label>
+                </div>
+                <div class="form-floating mb-3 w-75">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">5-5 Message</label>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary text-capitalize text-center">5-6 Send</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="footer">
+        <div class="row bg-dark text-center justify-content-center p-3">
+            <div class="col-lg-4 col-sm-12 text-light">
+                <!-- text-light -->
+                <h4 class="py-2"><b>6-1 Location</b></h4>
+                <small>2215 John Daniel Drive <br> Clark, MO 65243</small>
+            </div>
+            <div class="col-lg-4 col-sm-12 text-light">
+                <h4 class="py-2"><b>6-2 Around the Web</b></h4>
+                <div class="container py-2">
+                    <a href="#!" class="btn btn-md btn-dark rounded-circle border text-light me-2">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#!" class="btn btn-md btn-dark rounded-circle border text-light me-2">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#!" class="btn btn-md btn-dark rounded-circle border text-light me-2">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#!" class="btn btn-md btn-dark rounded-circle border text-light me-2">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 text-light">
+                <h4 class="py-2"><b>6-3 About Freelancer</b></h4>
+                <small>Freelance is a free to use, MIT licensed <br> Bootstrap theme created by <a href="#!" class="text-green">Start Bootstrap</a> .</small>
+            </div>
+        </div>
+        <div class="row bg-dark text-center justify-content-center g-3 p-4">
+            <small class="text-light">Copyright © Your Website 2023</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        (function () {
+          'use strict';
+        
+          // Fetch the form we want to apply custom Bootstrap validation styles to
+          var form = document.getElementById('contactForm');
+        
+          // Add a submit event listener to the form
+          form.addEventListener('submit', function (event) {
+            // Check if the form is valid
+            if (!form.checkValidity()) {
+              // If the form is invalid, prevent the default behavior (submission)
+              event.preventDefault();
+              event.stopPropagation();
+            }
+        
+            // Add the Bootstrap was-validated class to show the validation styles
+            form.classList.add('was-validated');
+          }, false);
+        })();
+    </script>
+        
+</body>
+
+
+</html>
+

@@ -1,0 +1,16 @@
+$primary: DarkCyan;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// 原本_variables.scss檔有預設一組顏色
+$custom-theme-colors:(
+    "altlight": yellow,
+    "altdark": #522192
+);
+// 把自定義的&預設的map合併
+$theme-colors:map-merge($custom-theme-colors,$theme-colors);
+
+// 將以上設定傳至...
+@import "../node_modules/bootstrap/scss/bootstrap";
+

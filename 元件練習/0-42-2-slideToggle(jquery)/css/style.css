@@ -1,0 +1,61 @@
+@charset "UTF-8";
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "微軟正黑體", Arial;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid #df9c63;
+  border-top: 0;
+}
+.container .cls-container {
+  width: 100%;
+}
+.container .cls-container .box {
+  border-top: 1px solid #df9c63;
+}
+.container .cls-container .box.active .title i:before {
+  content: "-";
+  color: white;
+}
+.container .cls-container .box.active .title {
+  background-color: #df9c63;
+  color: white;
+}
+.container .cls-container .box .title {
+  font-size: 20px;
+  font-weight: normal;
+  cursor: pointer;
+  color: #df9c63;
+  padding: 10px 36px;
+  cursor: pointer;
+}
+.container .cls-container .box .title:hover {
+  background-color: #df9c63;
+  color: white;
+}
+.container .cls-container .box .title:hover i:before {
+  color: #fff;
+}
+.container .cls-container .box .title i:before {
+  content: "+";
+  font-style: normal;
+  font-size: 26px;
+  color: #df9c63;
+  position: absolute;
+  top: -6px;
+  left: -22px;
+}
+.container .cls-container .box .content {
+  margin: 16px 36px;
+  display: none; /*(註1)*/
+}
+.container .cls-container .box .box:first-child {
+  border-top: none;
+}/*# sourceMappingURL=style.css.map */

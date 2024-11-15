@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <title>05-Flex Panel Gallery</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        font-family: "Neucha", "Noto Sans TC", sans-serif, cursive;
+    }
+    .panels{
+        background-color: rgb(177, 221, 251);
+        height: 100vh;
+        overflow: hidden;
+        
+        display: flex;
+        flex:1;
+    }
+    .panel{
+        /* border: 1px solid red; */
+        background-size:cover;
+        background-position: center;
+
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        transition: all 0.5s;
+    }
+    .panel1{background-image: url('./1.jpg')}
+    .panel2{background-image: url('./2.jpg')}
+    .panel3{background-image: url('./3.jpg')}
+    .panel4{background-image: url('./4.jpg')}
+    .panel5{background-image: url('./5.jpg')}
+
+    .panel p {
+        /* border: 1px solid red; */
+        color: white;
+        font-size: 2rem;
+
+        font-weight: 800;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px rgba(0,0,0,10);
+        margin: 0;  /* <p>預設會有margin,故需設定0 */
+        
+    }
+
+    .panel > *{
+        width: 100%;
+        display: flex;
+        flex: 1 0 auto;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+    }
+    .panel > :nth-child(2){
+        color: white;
+        font-size: 5rem;        
+        transition: all 1s;
+        filter: drop-shadow(0 0 10px rgb(255, 34, 86)); 
+        cursor: pointer;
+    }
+    .panel > *:first-child{
+        transform: translateY(-100%);
+    }
+    .panel > *:last-child{
+        transform: translateY(100%);
+    }
+
+    /* 加上open-active以後 */
+    .panel.open-active > *:first-child{
+        transform: translateY(0%);
+    }
+    .panel.open-active > *:last-child{
+        transform: translateY(0%);
+    }
+
+    /* 加上open以後 */
+    .panel.open{
+        flex:5;
+    }
+    .panel.open > :nth-child(2){
+        font-size: 7rem;
+        color:#F8322E;
+    }
+    .panel.open > *:last-child{
+        font-size: 5rem;
+        filter: drop-shadow(0 0 10px rgb(255, 240, 34)); 
+    }
+    .panel.open > *:first-child{
+        filter: drop-shadow(0 0 10px rgb(34, 233, 255)); 
+    }
+    .mask-dark{
+        background-color: rgba(0,0,0,0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+    
+    <div class="mask-dark"></div>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>Hey</p>
+            <p>Let's</p>
+            <p>Dance</p>
+        </div>
+        <div class="panel panel2">
+          <p>Give</p>
+          <p>Take</p>
+          <p>Receive</p>
+        </div>
+        <div class="panel panel3">
+          <p>Experience</p>
+          <p>It</p>
+          <p>Today</p>
+        </div>
+        <div class="panel panel4">
+          <p>Give</p>
+          <p>All</p>
+          <p>You can</p>
+        </div>
+        <div class="panel panel5">
+          <p>Life</p>
+          <p>In</p>
+          <p>Motion</p>
+        </div>
+      </div>
+
+      <audio id="myAudio" src="./jaymedia.mp4"></audio>
+
+    <script>
+        const panels = document.querySelectorAll('.panel');
+
+        function toggleOpen(){
+            this.classList.toggle('open')
+        }
+
+        function toggleActive(e) {
+            console.log(e);
+            //console.log(e.propertyName);
+            if (e.propertyName.includes('flex')) {
+                console.log(this)
+                this.classList.toggle('open-active');
+            }
+        }
+
+        panels.forEach((panel)=>panel.addEventListener('click',toggleOpen));
+        panels.forEach((panel)=>panel.addEventListener('transitionend',toggleActive));
+
+        // 監聽視窗中的點擊事件,啟動撥放音樂
+        function playsound (){
+            const audio = document.querySelector('audio');
+            audio.play();
+            // audio.currentTime=0;
+        };        
+        // window.addEventListener('click',playsound);
+
+        //---- 以下加入音訊鍵淡入的撥放效果
+        // 監聽音訊播完,會自動重複撥放
+        function loopSound() {
+            const audio = document.querySelector('audio');
+            audio.currentTime = 0;  // 將播放時間重置為 0
+            audio.play();           // 重新播放音樂
+        }
+        const audio = document.querySelector('audio');
+        audio.addEventListener('ended', loopSound);
+        // -------
+        let audioContext;
+        let gainNode;
+
+        // 等待用戶互動後才初始化 AudioContext（瀏覽器要求用戶操作後才能初始化音頻上下文）
+        function initAudioContext() {
+            if (!audioContext) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const audioElement = document.getElementById('myAudio');
+            const audioSource = audioContext.createMediaElementSource(audioElement);
+
+            // 創建增益節點（控制音量）
+            gainNode = audioContext.createGain();
+            audioSource.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            // 初始化音量為 0
+            gainNode.gain.value = 0;
+            }
+
+            // 確保 AudioContext 已啟動
+            if (audioContext.state === 'suspended') {
+            audioContext.resume();
+            }
+        }
+
+        // 定義淡入效果
+        function fadeIn() {
+            initAudioContext(); // 確保 AudioContext 已初始化
+            const audioElement = document.getElementById('myAudio');
+            audioElement.play();
+
+            // 漸變音量從 0 到 1
+            gainNode.gain.setTargetAtTime(1, audioContext.currentTime, 2);
+        }
+
+        // 定義淡出效果
+        function fadeOut() {
+            initAudioContext(); // 確保 AudioContext 已初始化
+            const audioElement = document.getElementById('myAudio');
+
+            // 漸變音量從 1 到 0
+            gainNode.gain.setTargetAtTime(0, audioContext.currentTime, 1);
+
+            // 2 秒後暫停音頻
+            setTimeout(() => audioElement.pause(), 2000);
+        }
+
+        window.addEventListener('click',fadeIn)
+            
+    </script>
+
+</body>
+</html>

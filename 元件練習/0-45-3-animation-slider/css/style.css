@@ -1,0 +1,245 @@
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+body{
+    font-family: '微軟正黑體';
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+/* ------------------------------
+    各頁slider-item版幅樣式
+------------------------------ */
+.slider-item{
+    position: relative; /*註1*/
+}
+.slider-item__image{
+    width: 100%;
+    height: 75vh; /*佔視窗高度的75%,較能彈性適應不同高度的視窗*/
+    border: 1px solid #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider-item__content{
+    position: absolute; /*註1*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+}
+.slider-item__title{
+    font-size: 64px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+.slider-item__para{
+    font-size: 18px;
+    color: #fff;
+    line-height: 32px;
+    margin-bottom: 32px;
+
+    /*註2: way1限制文字區塊寬度不超過560px*/
+    /* max-width: 560px;  */
+}
+.btn{
+    display: inline-block;
+    vertical-align: top;
+    padding: 16px 32px;
+    background-color: #ff6666;
+    color: #FFF;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+/* ---------------------- 
+    輪播的'頁次點點'樣式
+---------------------- */
+/* 先將原本html <link>的 owl-theme取消 */
+/* ------------ dots外框定位 ------------ */
+.owl-theme .owl-dots{
+    display: flex;
+    justify-content: center;
+    position: absolute; /*脫離block形式(避免占據整行,多餘的點擊範圍),變成沒有高度*/
+    left: 50%;
+    bottom: 16px;
+    transform: translate(-50%,0);
+}
+/* ------------ dots實際樣式 ------------ */
+.owl-theme .owl-dots .owl-dot{
+    width: 48px;
+    height: 8px;
+    margin: 0 4px;
+    margin-bottom: 10px;
+    outline: none; /*消除藍色框框*/
+}
+/* ------------ dots外顯樣式 ------------ */
+/* 利用偽元素做'外顯樣式' (不改變元件本身的尺寸,才不會影響點擊範圍) */
+.owl-theme .owl-dots .owl-dot:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.2s;
+}
+/* ------------ dots在'當前頁次'時的外顯樣式 ------------ */
+.owl-theme .owl-dots .owl-dot.active:after{
+    height: 100%;
+}
+
+/* ---------------------- 
+    輪播頁次切換左右鍵
+---------------------- */
+
+/* ------ 按鈕外框定位 ------ */
+.owl-theme .owl-nav{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+}
+/* ------ 按鈕樣式(左右鍵共同的部分) ------ */
+.owl-theme .owl-nav button.owl-prev,
+.owl-theme .owl-nav button.owl-next{
+    width: 32px;
+    height: 64px;
+    /* border: 2px solid green; */
+    position: absolute;
+    transform: translate(0,-50%);
+    top: 0;
+    outline: none;
+    
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.6;
+    transition: all 0.3s;
+    
+}
+/* ------ 按鈕樣式(左) ------ */
+.owl-theme .owl-nav button.owl-prev{
+    left: 16px;
+    background-image: url('../images/common/back.svg');
+    /* way1 置入圖片 ; way2 在html結構引入font-awsome  */
+}
+/* ------ 按鈕樣式(右) ------ */
+.owl-theme .owl-nav button.owl-next{
+    right: 16px;
+    background-image: url('../images/common/next.svg');
+}
+.owl-theme .owl-nav button.owl-prev:hover,
+.owl-theme .owl-nav button.owl-next:hover{
+    opacity: 1;
+}
+
+/* ----------------------------------
+    各頁slider-item內容進場動畫
+---------------------------------- */
+/* 切換當頁.slider-item會被加上.active */
+.owl-item.active .slider-item__title{
+    animation: fadeInLeft 0.5s 0.5s backwards;
+}
+.owl-item.active .slider-item__para{
+    animation: fadeInRight 0.5s 0.6s backwards;
+}
+.owl-item.active .slider-item__btn{
+    animation: fadeInUp 0.5s 0.7s backwards;
+}
+/* ----------------------------------
+    註3:各頁slider-item換頁過場動畫
+---------------------------------- */
+.slider-transition.animated{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    overflow: hidden;
+}
+.slider-transition.animated .panel{
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+.slider-transition.animated .panel-1{
+    background-color: #ff9696;
+    animation: sliderPanel1 1s ;
+}
+.slider-transition.animated .panel-2{
+    background-color: #ff6666;
+    animation: sliderPanel2 1s;
+}
+@keyframes sliderPanel1{
+    0%{width: 0;left: 0;}
+    50%{width: 100%;left: 0;}
+    100%{width: 0;left: 100%;}
+}
+@keyframes sliderPanel2{
+    0%{width: 0;left: 0;}
+    50%{width: 40%;left: 70;}
+    100%{width: 0;left: 100%;}
+}
+/* ----------------------------------
+    各頁slider-item落葉動畫
+---------------------------------- */
+.drops{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+}
+/* 指定每一個img, 都要以上一層.drops為定位基準 (否則會參差不齊) */
+.drops img{
+    position: absolute; 
+}
+/* 因.owl-carousel有預設img樣式'width:100%',故須加!important才能蓋過去 */
+.drops .drops-item-1{
+    left: 25%;
+    width: 100px !important;
+    animation: 
+        drop 15s -10s infinite linear,  /*delay秒數負數,有'快轉'效果 (假設動畫播放時間是15秒，動畫就會從第10秒開始播放，播放5秒後結束)*/
+        swing 5s 1s infinite;
+}
+.drops .drops-item-2{
+    left: 70%;
+    width: 120px !important;
+    animation: 
+        drop 15s -5s infinite linear,
+        swing 5s -3s infinite;
+}
+.drops .drops-item-3{
+    left: 50%;
+    width: 140px !important;
+    animation: 
+        drop 15s -8s infinite linear,
+        swing 5s -2s infinite;
+}
+.drops .drops-item-4{
+    left: 10%;
+    width: 100px !important;
+    animation: 
+        drop 15s -3s infinite linear,
+        swing 5s -4s infinite;
+}
+.drops .drops-item-5{
+    left: 85%;
+    width: 180px !important;
+    animation: 
+        drop 15s 0s infinite linear,
+        swing 5s 0s infinite;
+}
+@keyframes drop{
+    0%{top: -20%;}
+    100%{top: 120%;}
+}

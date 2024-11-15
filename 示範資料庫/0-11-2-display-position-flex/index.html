@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Center</title>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-1-2">
+
+      <h2>方法1: 水平置中 </h2>
+      <p>display:block , margin:auto</p>
+      <div class="outter1">
+        <div class="box1">box1</div>
+        <div class="box1">box1</div>    
+      </div>
+
+    </div>
+    <div class="col-1-2">
+      
+      <h2>方法2: 水平置中 </h2>
+      <p>display:inline-block 或 inline , 父層 text-align:center</p>
+      <div class="outter2">
+        <div class="box2">box2</div
+        ><div class="box2">box2</div>
+      <!-- 需消除inline-block預設間距: <div  換行  ></div> -->
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1-2">
+
+      <h2>方法3: 垂直水平置中 </h2>
+      <p>position:absolute , top:50%, left:50%, transform:translate(-50%,-50%); </p>
+      <div class="outter3">
+        <div class="box3">box3</div>
+      </div>
+
+    </div>
+    <div class="col-1-2">
+
+      <h2>方法4: 文字垂直水平置中 </h2>
+      <p>text-align: center; line-height同外框高度</p>
+      <div class="outter4">
+        <div class="box4">box4</div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+  <h2>以下皆為display:flex用法</h2>
+  <table style="width:100%">
+    <tr>
+      <th>Type</th> <th>Properties</th> <th>Property Values</th>
+    </tr>
+    <tr>
+      <td>父層屬性</td> <td>flex-direction: </td> <td>row, column, row-reverse, column-reverse</td>
+    </tr>
+    <tr>
+      <td>父層屬性</td> <td>flex-wrap: </td> <td>wrap, nowrap, wrap-reverse</td>
+    </tr>
+    <tr>
+      <td>父層屬性</td> <td>flex-flow: </td> <td>row wrap</td>
+    </tr>
+    <tr>
+      <td>父層屬性</td> <td>justify-content:  </td> <td>center, flex-start, flex-end, space-between, space-around, evenly</td>
+    </tr>
+    <tr>
+      <td>父層屬性</td> <td>align-items: </td> <td>center, flex-start, flex-end, stretch, baseline</td>
+    </tr>
+    <tr>
+      <td>父層屬性</td> <td>align-content: </td> <td>center, flex-start, flex-end, stretch, space-between, space-around</td>
+    </tr>
+    <tr>
+      <th>Type</th> <th>Properties</th> <th>Property Values</th>
+    </tr>
+    <tr>
+      <td>子層屬性</td> <td>align-self: </td> <td>center, flex-start, flex-end, stretch, baseline</td>
+    </tr>
+    <tr>
+      <td>子層屬性</td> <td>order:</td> <td>[number]</td>
+    </tr>
+    <tr>
+      <td>子層屬性</td> <td>flex-grow:</td> <td>[number]</td>
+    </tr>
+  </table>
+  
+
+  <div class="row">
+    <div class="col-1-2">
+
+      <h2>方法5: 垂直水平置中 </h2>
+      <p>父層 display:flex , margin:auto</p>
+      <div class="outter5">
+        <div class="box5">box5</div>
+        <div class="box5">box5</div>
+      </div>
+
+    </div>
+    <div class="col-1-2">
+
+      <h2>方法6_1: 垂直水平置中 </h2>
+      <p>父層 display:flex; justify-content:center; align-items: center</p>
+      <div class="outter6_1">
+        <div class="box6_1">box6_1-1</div>
+        <div class="box6_1">box6_1-2</div>
+        <div class="box6_1">box6_1-3</div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1-2">
+
+      <h2>方法6_2: 多個元素的垂直排列 </h2>
+      <p>父層 display:flex , 父層 flex-direction: column</p>
+      <div class="outter6_2">
+        <div class="box6_2">box6_2-1</div>
+        <div class="box6_2">box6_2-2</div>
+        <div class="box6_2">box6_2-3</div>
+      </div>
+
+    </div>
+    <div class="col-1-2">
+
+      <h2>方法6_3: 多個元素的水平排列 </h2>
+      <p>父層 display:flex , 父層 flex-direction: row-reverse</p>
+      <div class="outter6_3">
+        <div class="box6_3">box6_3-1</div>
+        <div class="box6_3">box6_3-2</div>
+        <div class="box6_3">box6_3-3</div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1-2">
+
+      <h2>方法6_4: </h2>
+      <p>父層 display:flex , justify-content:space-around</p>
+      <div class="outter6_4">
+        <div class="box6_4">box6_4-1</div>
+        <div class="box6_4">box6_4-2</div>
+        <div class="box6_4">box6_4-3</div>
+      </div>
+
+    </div>
+    <div class="col-1-2">
+
+      <h2>方法6_5: </h2>
+      <p>...</p>
+      <div class="outter6_5">
+        <div class="box6_5">box6_5-1</div>
+        <div class="box6_5">box6_5-2</div>
+        <div class="box6_5">box6_5-3</div>
+      </div>
+
+    </div>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1-2">
+
+      <h2>方法7_1: 垂直水平置中  </h2>
+      <p>父層 display:flex , 父層 justify-content:center , 指定的子層 align-self: center</p>
+      <div class="outter7_1">
+        <div class="box7_1">box7_1-1</div>
+        <div class="box7_1">box7_1-2</div>
+        <div class="box7_1" style="align-self: center">box7_1-3</div>
+        <!-- align-self: center / flex-end / flex-start -->
+      </div>
+
+    </div>
+    <div class="col-1-2">
+
+      <h2>方法7_2: 垂直水平置中  </h2>
+      <p>父層 display:flex , 父層 justify-content:center; flex-direction:column; align-items:end; , 指定的子層 align-self: center</p>
+      <div class="outter7_2">
+        <div class="box7_2">box7_2-1</div>
+        <div class="box7_2">box7_2-2</div>
+        <div class="box7_2" style="align-self: center">box7_2-3</div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1-2">
+
+      <h2>方法8: 垂直水平置中 </h2>
+      <p>父層 display:flex , 父層 justify-content:center;  align-content:center; flex-wrap:wrap;</p>
+      <div class="outter8">
+        <div class="box8">box8-1</div>
+        <div class="box8">box8-2</div>
+      </div>
+
+    </div>
+    <div class="col-1-2">
+
+      <h2>方法9: 說明 父層display:flex & 子層inline-flex 的差別  </h2>
+      <p>子層 display:inline-flex; </p>
+      <div class="outter9">
+        <div class="box9">box9-1</div>
+        <div class="box9">box9-2</div>    
+      </div>
+      
+    </div>
+  </div>
+  
+  <hr>
+
+  <h2>Flex排版的3段響應式效果</h2>
+  <div class="wrapper">
+    <header class="header">Header</header>
+    <article class="main">
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>  
+    </article>
+    <aside class="aside aside-1">Aside 1</aside>
+    <aside class="aside aside-2">Aside 2</aside>
+    <footer class="footer">Footer</footer>
+  </div>
+
+</body>
+</html>

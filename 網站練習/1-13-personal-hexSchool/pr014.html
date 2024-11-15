@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <!-- 六角學院直播班 https://www.youtube.com/watch?v=VXvfqoxx32w&list=WL&index=7-->
+    <!-- Figma設計稿 https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbE80WUNUUlVCamN6blRjVy0teHA5M3pkbVBWd3xBQ3Jtc0ttWTR3aGRTV0EtbWVQa3Vld3hicFZPZU5jS2VrZ0hwc0xIdEZQZS0yNTB3alM2UVppenJlWW1XR0VGdk4wVEdidERncVRGNHBFdXNSNzNzTFZ5VFFwMUhBOGVlUWU4RExQTS1sRnlUMVBfQlhDckNGZw&q=https%3A%2F%2Fhex.school%2F3xPGp&v=VXvfqoxx32w -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Pr014.css">
+    <title>Pr014</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-itmes-center">
+                <div class="brand open-sans-extrabold">PORTFOLIO.</div>
+                <ul class="navbar-list">
+                    <li><a href="#!" class="list-item">About</a></li>
+                    <li><a href="#!" class="list-item">Skill</a></li>
+                    <li><a href="#!" class="list-item">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <!-- Figma點選父圖層export匯出png檔-->
+        <div class="container p-relative">
+            <img src="./img014-1.png" alt="" class="p-absolute z-index--1 pos-3d" data-layer="30" style="left: 45px; top: 0;">
+            <img src="./img014-3.png" alt="" class="p-absolute z-index--1 pos-3d" data-layer="15" style="left: 360px; top: 340px;">
+            <div class="row">
+                <div class="col-md-5 d-flex align-itmes-center">
+                    <div class="header-content">
+                        <h2 class="">哈囉</h2>
+                        <h1 class="display-1">我是
+                            <span class="noto-sans-black" id="typing">
+                                UI設計師
+                            </span>
+                        </h1>
+                        <p class="noto-sans-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, a! Dicta voluptatum beatae a officiis aliquid sed distinctio repellendus ex, quas molestiae hic molestias, vel, incidunt maxime architecto omnis repudiandae.
+                        </p>
+                        <div>
+                            <a href="#!" class="social-link">
+                                <i class="bi bi-github"></i>                        
+                            </a>
+                            <a href="#!">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </div>
+                        <button type="button" class="btn-primary">認識我</button>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-1">
+                    <img src="./img014-2.png" alt="" class="pos-3d person-image" data-layer="6" data-invert="1">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section"></section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.addEventListener('mousemove',(e)=>{
+                //傳入滑鼠位置
+                document.querySelectorAll('.pos-3d').forEach((element)=>{
+                    sdd3d(element,e);
+                });
+            });
+        });
+
+        function sdd3d(element,e){
+            // Mouse position on the page
+            const m_x = e.pageX;
+            const m_y = e.pageY;
+
+            const w_w = window.innerWidth, //window width
+                w_h = window.innerHeight,
+                o_w = element.offsetWidth,
+                distance = (element.offsetWidth - w_w) / 2,
+                layer = Number(element.getAttribute('data-layer'));
+                invert = Number(element.getAttribute('data-invert'));
+
+            // 物件在葉面上的位置
+            const o_x = w_w / 2;
+            const o_y = w_h / 2;
+            // 兩者的距離差
+            let w_x = m_x - o_x ;
+            let w_y = m_y - o_y ;
+            // 距離相乘後開平方
+            const w_wSqrt = Math.sqrt(w_w / 2);
+            const d= distance / w_wSqrt / layer;
+            // 距離計算
+            let s_x = Math.sqrt(Math.abs(w_x)); // 陰影x距離
+            if (w_x < 0 ){
+                s_x = - s_x;
+            }
+
+            let d_x = s_x * d;
+            // 加入樣式
+            element.style.transform = `translateX(${invert ? d_x : -d_x}px)`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+@import '../node_modules/bootstrap/scss/bootstrap-reboot.scss';
+@import '../node_modules/bootstrap/scss/bootstrap-grid.scss'; 
+// @import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+// 改用 npm install react-bootstrap-icons --save
+// 再[Pr014.js] import { Alarm, HeartFill } from 'react-bootstrap-icons'; 以JSX的方式引入
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+$dark: #000;
+$dark-gray: #555555;
+
+$primary: #FF7A00;
+$primary-light:#FF9900;
+$secondary: #3586FF;
+$secondary-light:rgba(#0065FC,50%);
+
+body{
+    font-family: "Noto Sans TC", sans-serif; //若找不到字體,會以sans-serif替代
+    font-size: 16px;
+    line-height: 1.5;
+    background-image: linear-gradient(to bottom, #fff, #E9E9E9);
+}
+.open-sans-extrabold{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+}
+.noto-sans-black{
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 900;
+}
+.noto-sans-light{
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 900;
+}
+
+.container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bi{
+    color: $primary;
+    &:hover,&.active{
+        color: $primary-light;
+    }
+}
+.social-link {
+    display: inline-block;
+    padding: 0 4px;
+    margin-right: 6px;
+    text-decoration: none;
+    color: $dark-gray;
+    &:hover {
+        color: $primary;
+    }
+}
+
+// 導覽列
+.brand{
+    font-size: 24px;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(white,0.3);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    .navbar-list{
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .list-item{
+        padding: 1rem; //16px
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        &:hover, &.active{
+            color: $primary;
+        }
+    }
+}
+
+// header
+.header {
+    overflow: hidden;
+    .header-content {
+      padding-top: 244px;
+      padding-bottom: 244px;
+    }
+}
+.person-image {
+    padding-top: 30px;
+}
+
+.section{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #eee;
+}
+
+// Button
+.btn-primary{
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: none;
+    width: 50%;
+    background-image: linear-gradient(to bottom,$primary,$primary-light);
+    color: white;
+
+    transition: box-shadow 0.15s ease-in-out;
+    &:hover,&.active{
+        background-image: linear-gradient(to bottom,
+        darken($primary,3%),
+        darken($primary-light,3%));
+        box-shadow: $primary-light 5px 5px 15px;
+    }
+}
+
+// Utilities
+.d-flex{
+    display: flex;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.align-itmes-center{
+    align-items: center;
+}
+.p-relative{
+    position: relative;
+}
+.p-absolute{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.z-index--1{
+    z-index: -1;
+}
+.display-1{
+    font-size: 68px;
+}

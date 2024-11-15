@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Speed Scrubber</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="../05 - Flex Panel Gallery/5pr/jaymedia.mp4" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+
+<script>
+  const speed = document.querySelector('.speed');
+  const bar = speed.querySelector('.speed-bar');
+  const video = document.querySelector('.flex');
+
+  function handleMove(e) {
+      //找到游標在元素中的高度座標
+      const y = e.pageY - this.offsetTop; //事件位置到page頂端的距離 - 事件位置到此元件頂端的距離 = 事件發生在元件內的位置
+      const percent = y / this.offsetHeight; //事件位置 佔 元件高度的 %
+      // 改變bar的高度樣式
+      const height = Math.round(percent*100)+'%';
+      bar.style.height = height;
+      // 使bar上顯示的文字可提示目前撥放速率
+      const min = 0.4;
+      const max = 4;
+      const videoRate = percent * (max-min) + min;
+      bar.textContent = 'x' + videoRate.toFixed(2);
+      // 使影片撥放速率隨著數值改變
+      video.playbackRate = videoRate;
+    }
+  speed.addEventListener('mousemove', handleMove);
+
+</script>
+</body>
+</html>

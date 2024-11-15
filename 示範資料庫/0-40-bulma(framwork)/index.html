@@ -1,0 +1,356 @@
+<!-- Bulma 是一種UI框架(framwork),樣式皆已有設定RWD -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulma</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  </head>
+  <body>
+    <div class="section">
+        <div class="container">            
+            <!-- 標題 -->
+             <div>
+                 <h1 class="title">標題</h1>
+                 <h1 class="title is-1">標題 is-1</h1>
+                 <h1 class="title is-2">標題 is-2</h1>
+                 <h1 class="title is-3">標題 is-3</h1>
+                 <h1 class="title is-4">標題 is-4</h1>
+                 <h1 class="title is-5">標題 is-5</h1>
+                 <h1 class="title is-6">標題 is-6</h1>
+                 <h1 class="title is-7">標題 is-7</h1>
+             </div>
+    
+            <!-- 內容 -->
+            <div>          
+                <div class="content">內容</div>
+                <div class="content is-large">內容 is-large</div>     
+                <div class="content is-medium">內容 is-medium</div>
+                <div class="content is-small">內容 is-small</div>
+            </div>
+    
+            <!-- 按鈕 (已含hover效果) -->
+             <div>
+                 <button class="button">按鈕</button>
+                 <button class="button is-white">white</button>
+                 <button class="button is-light">light</button>
+                 <button class="button is-dark">dark</button>
+                 <button class="button is-link">link</button>
+                 <button class="button is-primary">primary</button>
+                 <button class="button is-info">info</button>
+                 <button class="button is-success">success</button>
+                 <button class="button is-warning">warning</button>
+                 <button class="button is-danger">danger</button>
+                 <br>
+                 <br>
+                 <button class="button is-info is-inverted">Inverted</button> <!--顏色反轉-->
+                 <button class="button is-link is-outlined">Outlined</button> <!--只有外框線-->
+                 <button class="button is-hovered">Hovered</button> <!--hover狀態時的樣子-->
+                 <button class="button is-active">Active</button>  <!--active狀態時的樣子-->
+                 <button class="button is-loading">Loading</button> <!--loading狀態時的樣子-->
+                 <button class="button is-small">Small</button>
+                 <button class="button is-medium">Medium</button>
+                 <button class="button is-large">Large</button>
+             </div>
+    
+            <!-- 盒子 box -->
+            <div class="box">盒子Box</div>
+    
+            <!-- 提示 -->
+            <div>
+                <div class="notification">
+                    notification Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    <button class="delete"></button>  <!--右上角的 x (關閉)按鈕-->
+                </div>
+                <div class="notification is-danger">
+                    notification is-danger Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </div>            
+            </div>
+
+            <!-- 標籤 -->
+            <div>
+                <div class="tag">
+                    tag
+                    <button class="delete"></button>  <!--右上角的 x (關閉)按鈕-->
+                </div>
+                <div class="tag is-info">tag</div>
+            </div>
+
+            <!-- 訊息 -->
+             <div>
+                 <div class="message">
+                     <div class="message-header">message-header</div>
+                     <div class="message-body">message-body</div>
+                 </div>
+                 <div class="message is-info">
+                     <div class="message-header">message-header</div>
+                     <div class="message-body">message-body</div>
+                 </div>
+             </div>
+            
+            <!-- 卡片 -->
+             <div class="card">
+                <div class="card-image">
+                    <div class="image is-16by9">
+                        <img src="./img/pic1.jpg" alt="全圖">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-96x96">
+                                <img class="is-rounded" src="./img/pic2.jpg" alt="頭貼圖">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="title is-4">Joyce</div>
+                            <div class="subtitle is-6">@joyceeee_</div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores quidem quisquam laboriosam maxime voluptatum quibusdam consequuntur sit. Molestias voluptatum nostrum, optio quae dolore dolores est quaerat sunt, beatae ullam obcaecati!
+                        <br><br>
+                        <a href="#!">#sea</a> 
+                        <a href="#!">#sky</a>
+                    </div>                    
+                </div>
+            </div>
+
+            <!-- 導覽列 -->
+            <div>
+                <nav class="navbar">
+                    <div class="navbar-brand">
+                        <a href="#!">
+                            <img class="image is-48x48" src="./img/pic2.jpg" alt="logo圖">
+                        </a>
+                    </div>
+                    <div class="navbar-start">
+                        <a class="navbar-item">首頁</a>
+                        <a class="navbar-item">作品</a>
+                        <a class="navbar-item">合作</a>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                                更多
+                            </a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item">
+                                    關於我們
+                                </a>
+                                <a class="navbar-item">
+                                    聯絡我們
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            
+            </div>
+
+            <!-- 分頁 -->
+            <div>
+                <nav class="pagination is-rounded">
+                    <a class="pagination-previous">上一頁</a>
+                    <a class="pagination-next">下一頁</a>
+                    <ul class="pagination-list">
+                        <li class="pagination-link is-current">1</li>  <!--is-current 預設起始頁數-->
+                        <li class="pagination-link">2</li>
+                        <li class="pagination-link">3</li>
+                        <li class="pagination-link">4</li>
+                        <li class="pagination-link">5</li>
+                    </ul>
+                </nav>
+                <nav class="pagination is-small">
+                    <a class="pagination-previous">上一頁</a>
+                    <a class="pagination-next">下一頁</a>
+                    <ul class="pagination-list">
+                        <li class="pagination-link is-current">1</li>
+                        <li class="pagination-link">2</li>
+                        <li class="pagination-link">3</li>
+                        <li class="pagination-link">4</li>
+                        <li class="pagination-link">5</li>
+                    </ul>
+                </nav>
+            </div>
+            <br>
+
+            <!-- Hero橫幅 -->
+            <div>
+                <div class="hero is-info is-small">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">HERO標題</h1>
+                            <h2 class="subtitle">副標題</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero is-warning is-medium">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">HERO標題</h1>
+                            <h2 class="subtitle">副標題</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero is-danger is-large">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">HERO標題</h1>
+                            <h2 class="subtitle">副標題</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- 搜尋 level.field -->
+            <div class="level-right">
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <input type="text" class="input is-info" placeholder="搜尋...">
+                        </p>
+                        <p class="control">
+                            <button class="button is-info">搜尋</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- 層級 level -->
+            <div>
+                <div class="level">
+                    <div class="level-item">
+                        <p class="heading">參加人數</p>
+                        <p class="title">5,387</p>
+                    </div>
+                    <div class="level-item">
+                        <p class="heading">舉辦場次</p>
+                        <p class="title">385</p>
+                    </div>
+                    <div class="level-item">
+                        <p class="heading">追蹤人數</p>
+                        <p class="title">10,329</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- 留言 -->
+            <div>
+                <div class="media-content">
+                    <div class="field">
+                        <p class="control">
+                            <textarea class="textarea" placeholder="請留言..."></textarea>
+                        </p>
+                        <div class="level">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <a class="button is-info">送出</a>
+                                </div>
+                            </div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                    <input type="checkbox" class="checkbox">
+                                    <label class="checkbox">是否需要匿名</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- 欄 -->
+            <div>
+                <div class="columns has-text-centered"> <!--has-text-centered 文字置中-->
+                    <div class="column is-3">1</div>  <!--is-3 寬度設定在「12等分佔3」的比例-->
+                    <div class="column is-3">2</div>
+                    <div class="column is-3">3</div>
+                    <div class="column">4</div>
+                    <div class="column">5</div>
+                    <div class="column">6</div>
+                </div>
+            </div>
+            <br>
+
+            <!-- 上傳附件file -->
+            <div>
+                <div class="file is-primary is-boxed">
+                    <lable class="file-label">
+                        <input type="file" class="file-input">
+                        <span class="file-cta">
+                            <span class="file-label">上傳</span>
+                        </span>
+                    </lable>
+                </div>
+                <div class="file is-info is-small">
+                    <lable class="file-label">
+                        <input type="file" class="file-input">
+                        <span class="file-cta">
+                            <span class="file-label">上傳</span>
+                        </span>
+                    </lable>
+                </div>
+            </div>
+            <br>
+
+            <!-- 表單form -->
+            <div>
+                <div class="field">
+                    <label class="label">姓名
+                        <input type="text" class="input is-primary" placeholder="範例:Joyce">
+                    </label>
+                    <label class="label">電話
+                        <input type="tel" class="input is-primary" placeholder="範例:0912-233423">
+                    </label>
+                    <label class="label">E-mail
+                        <input type="email" class="input is-primary" placeholder="範例:Joyce@...">
+                    </label>
+                    <label class="label">選項
+                        <div class="control"> <!--加control 會換行-->
+                            <div class="select  is-primary">
+                                <select>
+                                    <option>星期五</option>
+                                    <option>星期六</option>
+                                    <option>星期日</option>
+                                </select>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="label">內容
+                        <textarea class="textarea is-primary"></textarea>
+                    </label>
+                    <input type="checkbox" class="checkbox">
+                    <label class="checkbox">
+                        我同意遵守<a>xxx公司網頁規範</a>
+                    </label>    
+                    <div class="field is-grouped"> <!--.field .is-grouped 讓按鈕變成一組的排版樣式-->
+                        <div class="control">
+                            <button class="button is-link">送出</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-light">取消</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <!-- 頁尾footer -->
+            <div>
+                <div class="footer has-text-centered">
+                    <div class="content">
+                        Copyright by <strong>Joyce</strong> <a>All right reserved</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+     
+
+  </body>
+</html>

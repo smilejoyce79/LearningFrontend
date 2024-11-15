@@ -1,0 +1,203 @@
+*{
+	box-sizing: border-box;
+	position: relative;
+}
+body{
+  font-size: 20px;
+  margin: 0;
+  max-width: 1500px;
+}
+
+td,th{padding: 5px 10px;border: 1px solid #000;}
+table{ margin-bottom: 20px; border: 1px solid #000;}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-1-2{
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+}
+@media screen and (max-width: 768px){
+  .col-1-2{
+    flex: 100%;
+  }
+}
+
+/* ------- 方法1 ------- */
+.outter1{height: 150px;  width: 600px;  background-color: #ffc0be;
+}
+.box1{width: 100px;  height: 100px;  border: 1px solid red;
+  display: block; /* 占滿整行 */
+  margin: 0 auto;
+}
+
+/* ------- 方法2 ------- */
+.outter2{height: 150px; width: 600px;  background-color: #ffc0be;
+  text-align: center; /* 文字水平對齊 */
+}
+.box2{width: 100px;  height: 100px;  border: 1px solid red;
+  display: inline-block;
+  text-align: left;  /* 需消除父層設定的'內層文字置中'(延續繼承的屬性) */
+}
+
+/* ------- 方法3 ------- */
+.outter3{height: 150px; width: 600px;  background-color: #ffc0be;
+  position:relative;  
+  /* 或 absolute 或 fixed */
+}
+.box3{width: 100px;  height: 100px;  border: 1px solid red;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* ------- 方法4 ------- */
+.outter4{height: 150px; width: 600px;  background-color: #ffc0be;
+}
+.box4{width: 100px;  height: 100px;  border: 1px solid red;
+  text-align: center;  /* 文字水平對齊 */
+  line-height: 100px;  /* 文字垂直放置(設定文字行高=box高度) */
+}
+
+/* ------- 方法5 ------- */
+.outter5{height: 150px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+}
+.box5{width: 100px;  height: 100px;  border: 1px solid red;
+  margin: auto ; 
+  /* margin: 0 auto;  左右水平置中 */
+  /* margin: auto 0;  上下垂直置中 */
+}
+
+/* ------- 方法6_1 ------- */
+.outter6_1{height: 150px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+  align-items: center; /* 子層元件垂直對齊 */
+  justify-content: center; /* 子層元件水平對齊 */
+  /* space-between(左右靠齊且不留間距), space-around(左右靠齊且留有間距), flex-start(向頭靠齊), flex-end(向尾靠齊) */
+}
+.box6_1{width: 100px;  height: 100px;  border: 1px solid red;
+}
+
+/* ------- 方法6_2 ------- */
+.outter6_2{height: 400px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+  flex-direction: column;   /*直向排列*/
+  justify-content: center; /*垂直對齊*/
+  align-items: center; /*水平對齊*/
+}
+.box6_2{width: 100px;  height: 100px;  border: 1px solid red;
+}
+
+/* ------- 方法6_3 ------- */
+.outter6_3{height: 150px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+  flex-direction: row-reverse;   /*橫向排列(水平置中)*/
+  justify-content: center; /*方向改了,變成水平對齊*/
+  align-items: center; /*方向改了,變成垂直對齊*/
+}
+.box6_3{width: 100px;  height: 100px;  border: 1px solid red;
+}
+
+/* ------- 方法6_4 ------- */
+.outter6_4{height: 150px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+  justify-content: space-around; 
+}
+.box6_4{width: 100px;  height: 100px;  border: 1px solid red;
+}
+
+/* ------- 方法6_5 ------- */
+.outter6_5{height: 150px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+}
+.box6_5{width: 100px;  height: 100px;  border: 1px solid red;
+}
+
+/* ------- 方法7_1 ------- */
+.outter7_1{height: 150px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+  justify-content: center; /* 子層元件水平對齊 */
+}
+.box7_1{width: 100px;  height: 100px;  border: 1px solid red;
+}
+
+/* ------- 方法7_2 ------- */
+.outter7_2{height: 150px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+  justify-content: center; /* 子層元件水平對齊 */
+  flex-direction: column;
+  align-items: end;
+}
+.box7_2{width: 100px;  height: 100px;  border: 1px solid red;
+}
+
+/* ------- 方法8 ------- */
+.outter8{height: 150px; width: 600px;  background-color: #ffc0be;
+  display: flex;
+  justify-content:center;  /* 子層元件水平對齊 */
+
+  align-content: center; /* 子層元件垂直對齊 */
+  flex-wrap: wrap;
+}
+.box8{width: 100px;  height: 100px;  border: 1px solid red;
+
+}
+
+/* ------- 方法9 ------- */
+.outter9{height: 150px; width: 600px;  background-color: #ffc0be;
+}
+.box9{width: 100px;  height: 100px;  border: 1px solid red;
+  display: inline-flex; 
+  /* display:flex & inline-flex 的差別就像 block & inline-block */
+
+}
+
+/* justify-items: auto; */
+
+/*
+align-items：當交錯軸只有一行時的對齊方式
+align-content：交錯軸為多行時的的整體對齊方式
+align-self：交錯軸個別項目的對齊方式 
+*/
+
+/* ===============Flex排版的3段響應式效果=========== */
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  text-align: center; 
+}
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+.header {  background: tomato;}
+.footer {  background: lightgreen;}
+.main {
+  text-align: left;
+  background: deepskyblue;
+}
+.aside-1 {  background: gold;}
+.aside-2 {  background: hotpink;}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+  /* flex: 佔比; 收縮程度; 指定基本尺寸 */
+  /* flex: flex-grow; flex-shrink; flex-basis */
+  /* 預設:  flex: 0  1  auto */
+  /* flex:5 即 flex: 5  1  0% */
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+

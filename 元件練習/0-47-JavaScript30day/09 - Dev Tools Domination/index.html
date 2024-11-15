@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [
+      { name: 'Snickers', age: 2 }, 
+      { name: 'hugo', age: 8 }
+    ];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+// Regular 一般表示法
+    console.log('hello')
+
+// Interpolated 插值表示法 %s
+    console.log('hello %s welcome' , 'Jc')
+
+// Styled 指定樣式表示法 %c
+    console.log('%c Hello CSS ' , ' font-size: 20px; background: red; text-shadow: 2px 2px 0 blue ')
+
+// warning! 警示訊息
+    console.warn('warn')
+
+// Error :| 錯誤訊息
+    console.error('error')
+
+// Info 提示訊息
+    console.info('info')
+
+// assert 運算結果若出錯,回傳指定訊息
+    console.assert(1 === 2 , 'That is wrong')
+    console.assert(1 === 1 , 'please check') //正確,不會顯示在console
+
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('ouch'),'There have no ouch class in p')
+
+  // clearing 清除
+    // console.clear()
+
+// Viewing DOM Elements 
+    console.log(p); //查看DOM節點
+    console.dir(p); //查看該node有哪些方法可用
+
+// Grouping together 群組表示法
+  dogs.forEach(dog=>{
+    console.groupCollapsed(`${dog.name}`);
+
+    console.log(`This is ${dog.name}`); //代入顯示
+    console.log(`This is ${dog.name} , ${dog.age} years old`); //多個值代入顯示
+    console.log(`This is ${dog.name} , ${dog.age *7} dog years old`); //多個值代入運算後顯示
+
+    console.groupEnd(`${dog.name}`);
+  });
+
+
+// counting
+  console.count('haha');
+  console.count('haha');
+  console.count('boooo');
+  console.count('haha');
+  console.count('haha');  //最後一筆顯示4個
+
+  console.count('boooo');
+  console.count('boooo'); //最後一筆顯示3個
+
+// timing 擷取資料花費時間
+  console.time('fetching data cost time')
+  fetch('https://api.github.com/users/wesbos')
+    .then(x => x.json())
+    .then(d => {
+      console.log(d);
+      console.timeEnd('fetching data cost time');
+    });
+
+// table 以表格列示
+  console.table(dogs)
+
+  </script>
+</body>
+</html>

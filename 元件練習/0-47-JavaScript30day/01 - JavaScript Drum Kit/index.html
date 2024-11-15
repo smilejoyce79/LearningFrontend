@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://fav.farm/✅" />
+    <link rel="stylesheet" href="./index.css">
+    <title>JS Drum Kit</title>
+</head>
+<body>
+    <div class="keys">
+        <div data-key="65" class="key">
+          <kbd>A</kbd>
+          <span class="sound">clap</span>
+        </div>
+        <div data-key="83" class="key">
+          <kbd>S</kbd>
+          <span class="sound">hihat</span>
+        </div>
+        <div data-key="68" class="key">
+          <kbd>D</kbd>
+          <span class="sound">kick</span>
+        </div>
+        <div data-key="70" class="key">
+          <kbd>F</kbd>
+          <span class="sound">openhat</span>
+        </div>
+        <div data-key="71" class="key">
+          <kbd>G</kbd>
+          <span class="sound">boom</span>
+        </div>
+        <div data-key="72" class="key">
+          <kbd>H</kbd>
+          <span class="sound">ride</span>
+        </div>
+        <div data-key="74" class="key">
+          <kbd>J</kbd>
+          <span class="sound">snare</span>
+        </div>
+        <div data-key="75" class="key">
+          <kbd>K</kbd>
+          <span class="sound">tom</span>
+        </div>
+        <div data-key="76" class="key">
+          <kbd>L</kbd>
+          <span class="sound">tink</span>
+        </div>
+      </div>
+
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="83" src="sounds/hihat.wav"></audio>
+    <audio data-key="68" src="sounds/kick.wav"></audio>
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="71" src="sounds/boom.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tom.wav"></audio>
+    <audio data-key="76" src="sounds/tink.wav"></audio>
+
+<script>
+    function playsound(e){
+        // console.log(e.keyCode)
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+        // console.log(audio)
+        if(!audio) return; //若按到沒有指定data-key的鍵,audio=null=false, 就停止往下run
+        audio.currentTime=0;  //將音訊播放位置倒帶回00:00,使鍵盤快速連點時,audio.play()能跟著連續執行(否則會認為已經在執行中而不重複播放聲音)
+        audio.play();
+
+        // console.log(key)
+        //key.addClass('playing');  //jQuery寫法
+        key.classList.add('playing')
+    }
+
+    function removeTransition(e){
+        // console.log(e) //CSS run到propertyName:'transform'就是最後一個階段,完成渲染
+        if(e.propertyName !== 'transform') return; 
+        // console.log(this);
+        this.classList.remove('playing');
+    }
+
+    const keys = document.querySelectorAll(`.key`);
+    // console.log(keys);  //keys是一個陣列資料,需用forEach進去遍歷執行監聽事件
+    keys.forEach(key => 
+        key.addEventListener('transitionend',removeTransition) //transitionend(CSS渲染結束時)
+    );
+
+    window.addEventListener('keydown',playsound);
+</script>
+
+</body>
+</html>

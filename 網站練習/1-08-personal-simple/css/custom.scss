@@ -1,0 +1,95 @@
+// 自定義顏色覆蓋bootstrap預設
+$primary: #19bc9c;
+$secondary: #16a085;
+$dark:#2c3e50;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// 自定義的顏色集合
+$custom-theme-colors:(
+    "altlight": yellow,
+    "altdark": #522192
+);
+// 把自定義的& _variables.scss預設的 map合併
+$theme-colors:map-merge($custom-theme-colors,$theme-colors);
+
+// 自定義 active 狀態的顏色變數
+$nav-link-active-color: #ffffff; 
+// 使用 Bootstrap 提供的樣式覆蓋變數
+// $link-active-color: $nav-link-active-color;
+// 或直接自定義樣式（若不使用變數）
+.nav-link.active {
+    color: $nav-link-active-color !important;
+    background-color: #16a085;
+    border-radius: 10px
+}
+
+// 導入 GoogleFont 的Kanit字體
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// 自定義字體
+$custom-font: 'Kanit', sans-serif; // 改'Kanit'中的字體名稱，使用 Google Fonts
+// 覆蓋 Bootstrap 的字體變數
+$font-family-sans-serif: $custom-font;  // 設置 sans-serif 字體
+$font-family-base: $custom-font;        // 設置全局基礎字體
+
+// 導入bootstrap核心樣式
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+//-----------------------------
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: #ffffff;
+}
+.navbar .nav-link:hover {
+    color: #16a085; 
+}
+#footer .btn:hover  {
+    background-color: #ffffff; 
+    i{
+        color: black;
+    }
+}
+.navbar-toggler{
+    color:#ffffff;
+    &:hover {
+        color:#2c3e50;
+    }
+}
+
+.modal-title {
+    width: 100%;
+    text-align: center;
+    transform: translate(10px,0);
+}
+
+.myimg-hover {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.myimg-hover::before {
+    content: "+";
+    font-size: 150px; 
+    padding-left: 40%;
+    color:#ffffff;
+    
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #19bc9c;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.myimg-hover:hover::before {
+    opacity: 0.8; 
+}

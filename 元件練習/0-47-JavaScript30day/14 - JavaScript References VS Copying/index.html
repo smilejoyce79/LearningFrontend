@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <script>
+  // 字串 數字 布林值 的特性: 後來重新定義變數,不會改到前面已定義的變數
+    // let age = 100;
+    // let age2 = age;
+    // console.log(age, age2);  //100 100
+    // age = 200;
+    // console.log(age, age2);  //200 100 
+
+    // let name = 'Wes';
+    // let name2 = name;
+    // console.log(name, name2); //wes wes
+    // name = 'wesley';
+    // console.log(name, name2);  //weley wes
+
+  // 陣列 的特性: 後來重新定義陣列, 會連同前面已宣告過的一併被改到=> 所以需要用"深拷貝"
+    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    // const team = players;
+    // console.log(players,team); //都是['Wes', 'Sarah', 'Ryan', 'Poppy'] 
+
+    // team[3] = 'Lux';
+    // console.log(players,team); //都是['Wes', 'Sarah', 'Ryan', 'Lux'] 
+
+  //將 陣列 深拷貝的方式
+    //way1: 用.slice()用索引值指定位置擷取內容 組成新陣列
+      const team2 = players.slice();
+      team2[3] = 'Lux';
+      console.log(players,team2); //['Wes', 'Sarah', 'Ryan', 'Poppy']  ['Wes', 'Sarah', 'Ryan', 'Lux']
+
+    //way2: 用.concat()合併2個不同陣列 組成新陣列
+      const team3 = [].concat(players);
+      team3[3] = "cindy";
+      console.log(players,team3) //['Wes', 'Sarah', 'Ryan', 'Poppy'] ['Wes', 'Sarah', 'Ryan', 'cindy']
+
+    //way3: 用...ES6的展開運算符
+      const team4 = [...players];
+      team4[3] = "Aka";
+      console.log(players,team4); //['Wes', 'Sarah', 'Ryan', 'Poppy'] ['Wes', 'Sarah', 'Ryan', 'Aka']
+
+    //way4: 用Array.from迭代 組成新陣列
+      const team5 = Array.from(players);
+      team5[3] = "Ann";
+      console.log(players,team5) //['Wes', 'Sarah', 'Ryan', 'Poppy'] ['Wes', 'Sarah', 'Ryan', 'Ann']
+
+  // 物件 的特性: 後來重新定義陣列, 會連同前面已宣告過的一併被改到=> 所以需要用"深拷貝"
+    const person = {
+      name: 'Wes Bos',
+      age: 80
+    };
+    // const captain = person;
+    // captain.number = 99;
+    // console.log(person,captain) //都是{name: 'Wes Bos', age: 80, number: 99}
+
+  //將 物件集合 淺拷貝的方式: 用 Object.assign(原物件集合, 要加上的物件集合, 要新增/修改的物件key:value) 組成新物件
+    const cap2 = Object.assign({},person,{number:99, age:31});
+    console.log(person,cap2);  //{name: 'Wes Bos', age: 80} {name: 'Wes Bos', age: 31, number: 99}
+
+    const wes = {
+      name: 'Wes',
+      age: 100,
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+      }
+    };
+
+    // const dev = Object.assign({},wes,{age:90});
+    // dev.social.twitter = '@coolman';
+    // console.log(wes,dev); // age: wes維持100,dev已改成90 ; socail子層的twitter: wes和dev都已改成'@coolman'
+
+  //將 物件集合 深拷貝的方式: 先用JSON.stringify轉成字串格式,再用JSON.parse轉回物件格式 成立新物件
+    const dev2 = JSON.parse(JSON.stringify(wes));
+    dev2.social.twitter = '@warmman';
+    dev2.age="70";
+    console.log(wes,dev2);
+    
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+.main-terms {
+  padding-top: 70px;
+}
+.main-terms h3 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.main-terms .container {
+  margin-bottom: 32px;
+}
+.main-terms .container:not(:last-child) .column {
+  padding-bottom: 32px;
+  border-bottom: 1px solid #d5a26f;
+}
+.main-terms .container .title {
+  color: #d5a26f;
+  font-size: 20px;
+  padding-bottom: 16px;
+}
+.main-terms .container p {
+  line-height: 1.5;
+}
+.main-terms .container p:not(:last-child) {
+  padding-bottom: 10px;
+}/*# sourceMappingURL=terms.css.map */

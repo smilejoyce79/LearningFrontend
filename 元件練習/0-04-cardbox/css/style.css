@@ -1,0 +1,94 @@
+*{
+	box-sizing: border-box;
+	/* border: 1px solid #000; */
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+html,body{
+	height: 100%;
+}
+h1,h2,h3,p{
+	margin: 0;
+}
+.wrapper{
+	height: 100%;
+	background: linear-gradient(#EF9FBF,#F9DED7);
+	overflow: hidden;
+}
+.product{
+	box-shadow: 0px 5px 20px rgba(0,0,0,0.05) ;
+	background-color: #FFF;
+	width: 800px ; 
+	height: 540px ;
+	/* 置中方法一:水平居中 */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 128px;
+
+	padding: 16px;
+	border-radius: 4px;
+}
+.product .info{
+	width: 50% ; 
+	height: 100% ;
+	display: inline-block;
+	vertical-align: top;
+	padding: 64px 56px;
+	background-color: #0000000f;
+}
+.product .image{
+	height: 100%;
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+}
+.product .image img{
+	height: 100%;
+	display: block;
+}
+.product .name{
+	font-size: 100px ;
+	font-weight: 300;
+	color:#444;
+	white-space: nowrap;
+	margin-bottom: 16px;
+	text-shadow: 0 48px 10px rgba(0,0,0,0.05);
+
+	position: relative;
+	z-index: 10;
+}
+.product .price{
+	font-size: 48px ;
+	font-weight: 300;
+	color: #EF9FBF;
+	margin-bottom: 16px;
+}
+.product .des{	
+	font-size: 16px;
+	line-height: 24px ;
+	color: #666;
+	margin-bottom: 16px;
+}
+.product .btn{
+	box-shadow: 0px 8px 40px rgb(0,0,0,0.5);
+	color: #FFF;
+	font-size: 24px ;
+	line-height: 24px ;
+	text-align: justify;
+	display: inline-block;
+	padding: 12px 40px;
+	letter-spacing: 8px;
+
+	background: rgba(250,195,209,1);
+	background: -moz-linear-gradient(45deg, rgba(250,195,209,1) 0%, rgba(250,105,146,1) 38%, rgba(230,120,149,1) 39%, rgba(234,76,116,1) 57%, rgba(234,76,116,1) 72%, rgba(250,195,209,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(250,195,209,1)), color-stop(38%, rgba(250,105,146,1)), color-stop(39%, rgba(230,120,149,1)), color-stop(57%, rgba(234,76,116,1)), color-stop(72%, rgba(234,76,116,1)), color-stop(100%, rgba(250,195,209,1)));
+	background: -webkit-linear-gradient(45deg, rgba(250,195,209,1) 0%, rgba(250,105,146,1) 38%, rgba(230,120,149,1) 39%, rgba(234,76,116,1) 57%, rgba(234,76,116,1) 72%, rgba(250,195,209,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(250,195,209,1) 0%, rgba(250,105,146,1) 38%, rgba(230,120,149,1) 39%, rgba(234,76,116,1) 57%, rgba(234,76,116,1) 72%, rgba(250,195,209,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(250,195,209,1) 0%, rgba(250,105,146,1) 38%, rgba(230,120,149,1) 39%, rgba(234,76,116,1) 57%, rgba(234,76,116,1) 72%, rgba(250,195,209,1) 100%);
+	background: linear-gradient(45deg, rgba(250,195,209,1) 0%, rgba(250,105,146,1) 38%, rgba(230,120,149,1) 39%, rgba(234,76,116,1) 57%, rgba(234,76,116,1) 72%, rgba(250,195,209,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fac3d1', endColorstr='#fac3d1', GradientType=1 );
+}

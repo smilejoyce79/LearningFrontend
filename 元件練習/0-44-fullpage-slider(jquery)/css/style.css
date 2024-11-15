@@ -1,0 +1,52 @@
+*{
+	box-sizing:border-box ;
+	position: relative;
+}
+
+/* component */
+.section{
+   background-color: #000;
+   border: 1px solid #FFF;
+
+}
+.title{
+    color:#FFF;
+    font-size: 64px;
+    font-family: '微軟正黑體';
+    text-align: center;
+}
+.menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: fixed;
+    right: 32px;
+    top: 50%;
+    z-index: 50;
+    transform: translate(0,-50%);
+}
+.menu .menu__item{
+    margin-bottom: 16px;
+}
+.menu .menu__item:after{
+    content: '';
+    width: 0%;
+    height: 4px;
+    background-color: #D5A26F;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s;
+}
+.menu .menu__item.active:after{
+    width: 100%;
+}
+.menu .menu__link{
+    color:#FFF;
+    text-decoration: none;
+    font-family: "微軟正黑體";
+    line-height: 32px;
+}
+.footer{
+    background-color: gray;
+}

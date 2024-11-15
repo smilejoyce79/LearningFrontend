@@ -1,0 +1,60 @@
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    border: 3px solid #fff;
+    color:#fff;
+    font-family: '微軟正黑體';
+    font-size: 20px ;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 24px 60px;
+    text-decoration: none;
+
+    overflow: hidden;
+    transition: color 2s; /*註2同步動畫(秒數互相搭配)*/
+}
+.btn:hover{
+    color: #333; /*註2同步動畫(秒數互相搭配)*/
+}
+
+.btn:before{
+    content: '';
+    width: 320px;
+    height: 320px;
+    background-color: white;
+    border-radius: 130px;
+    /* border: 1px solid red; */
+    /* display: block; //test:看一下完整物件目前定位*/
+
+    position: absolute;  /*以btn的位置為基準*/
+    transform: translate(-50%,0);  /*x軸移動-50%(向左移)*/
+    left: 50%; /*距離左邊界50%(向右推)*/
+    top: 70px; /*距離上邊界80ps(向下推)*/
+
+    animation: wave 5s infinite linear; 
+    transition: top 1s;  /*註2同步動畫(秒數互相搭配)*/
+}
+.btn:hover:before{
+    top:15px; /*註2同步動畫(秒數互相搭配)*/
+}
+
+@keyframes wave{
+    0%{
+        transform: translate(-50%,0) rotate(0);  /*註1 因transform樣式會被蓋掉,故需複寫*/
+    }
+    100%{
+        transform: translate(-50%,0) rotate(360deg);
+    }
+}

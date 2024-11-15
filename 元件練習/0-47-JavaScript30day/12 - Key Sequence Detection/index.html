@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script type="text/javascript" src="./cornify.js"></script>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <script>
+      const pressed=[];
+      const keyword='joyce';
+
+      function track(e){
+        pressed.push(e.key)
+        pressed.splice( -keyword.lenth-1 , pressed.length - keyword.length);
+        //.splice(索引值,個數): 移除'指定位置'起的'指定個數'
+        console.log(pressed);
+        //.join(""): 以指定符號串接陣列元素,會變成字串格式
+        if(pressed.join("").includes(keyword)){
+          cornify_add();
+        }
+      }
+
+      window.addEventListener('keyup',(e)=>track(e))
+
+    </script>
+  </body>
+</html>
+
