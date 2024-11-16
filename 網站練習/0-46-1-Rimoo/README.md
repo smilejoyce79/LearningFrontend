@@ -3,7 +3,7 @@
 #### 課程臨摹練習筆記
 > refer to Xuemi
 
-#### 訓練重點
+#### 技術應用
   - HTML及SCSS切版
   - RWD響應式調整
   - firebase 後端服務
@@ -17,7 +17,7 @@
   - fancybox 彈窗燈箱插件
 
 ## Demo
-[demo](https://0-46-1-rimoo.pages.dev/) <br/>
+[Demo網址](https://0-46-1-rimoo.pages.dev/) <br/>
 ![demo1](demo1.gif)
 ![demo2](demo2.gif)
 ![demo3](demo3.gif)

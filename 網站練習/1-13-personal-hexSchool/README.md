@@ -3,7 +3,7 @@
 #### 課程臨摹練習筆記
 > refer to hexSchool
 
-#### 訓練重點
+#### 技術應用
   - 參照Figma設計檔開發
   - HTML及SCSS切版
   - 套用JS動畫效果

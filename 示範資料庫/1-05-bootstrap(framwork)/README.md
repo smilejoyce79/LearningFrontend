@@ -5,9 +5,9 @@
 > refer to W3school
 > refer to Youtube
 
-#### 訓練重點
+#### 用途
   - 了解Bootstrap各項class效果
-  - HTML及CSS切版
+  - 練習HTML及CSS切版
   - 建置一個開發時可以參考的工具箱(資料庫)
 
 ## Demo

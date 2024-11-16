@@ -3,7 +3,7 @@
 #### 課程臨摹練習筆記
 > refer to [Wes Bos](https://javascript30.com)
 
-#### 訓練重點
+#### 技術應用
   - 動態改變DOM
   - addEventListener監聽事件
   - 事件委派(Event Delegation)

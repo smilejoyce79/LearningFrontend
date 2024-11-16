@@ -5,7 +5,7 @@
 > refer to AntDesign
 > refer to CodeWithAamir youtube
 
-#### 訓練重點
+#### 用途及技術應用
  - React-router-dom
  - 了解AntDesign的各項用法
  - 建置一個開發時可以參考的工具箱(資料庫)

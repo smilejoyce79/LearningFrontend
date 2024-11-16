@@ -3,7 +3,7 @@
 #### 課程臨摹練習筆記
 > refer to Xuemi
 
-#### 訓練重點
+#### 技術應用
   - CSS animation動畫效果
 
 ## Demo

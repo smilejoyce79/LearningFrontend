@@ -2,5 +2,8 @@
 
 #### 觀念彙整筆記
 
+#### 技術應用
+  - CSS的display、flex、position用法 
+
 ## Demo
 ![demo](demo.png)

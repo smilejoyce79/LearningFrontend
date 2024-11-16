@@ -3,7 +3,7 @@
 #### 課程臨摹練習筆記
 > refer to james-kool youtube
 
-#### 訓練重點
+#### 技術應用
   - HTML及CSS切版
   - JavaScript 動態改變DOM元素
   - addEventListener 監聽事件觸發函數

@@ -3,9 +3,9 @@
 #### 課程臨摹練習筆記
 > refer to Xuemi
 
-#### 訓練重點
+#### 技術應用
   - HTML及CSS切版
-  - RWD響應式(@media)
+  - RWD響應式
   - React-router-dom
   - styled-components
   - Context API

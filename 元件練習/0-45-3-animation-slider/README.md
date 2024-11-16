@@ -2,7 +2,8 @@
 
 #### 課程臨摹練習筆記
   > refer to Xuemi
-#### 訓練重點: 
+  
+#### 技術應用
  - HTML及CSS切版
  - JavaScript動態加上class
  - owl-carousel插件
